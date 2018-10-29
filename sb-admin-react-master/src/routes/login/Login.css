@@ -13,6 +13,11 @@
   padding-right: 20px;
 }
 
+body {
+  background-image: url("../../public/logo-ndc.png");
+  background-size: cover;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 0 40px;
@@ -154,4 +159,38 @@
   width: 100%;
   border-bottom: 1px solid #ddd;
   content: '';
+}
+
+.btn-success {
+   color: rgb(240, 241, 245);
+   background-color: #337ab7;
+   border-color: #337ab7
+}
+
+.btn-success.focus, .btn-success:focus {
+   color: #fff;
+   background-color: #337ab7;
+   border-color: #75b7ee
+}
+
+.btn-success:hover {
+   color: #fff;
+   background-color:#75b7ee;
+   border-color: #75b7ee;
+}
+
+.btn-success.active, .btn-success:active, .open>.dropdown-toggle.btn-success {
+   color: #fff;
+   background-color: #75b7ee;
+   border-color: #75b7ee;
+}
+
+.btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open>.dropdown-toggle.btn-success.focus, .open>.dropdown-toggle.btn-success:focus, .open>.dropdown-toggle.btn-success:hover {
+   color: #fff;
+   background-color: #75b7ee;
+   border-color: #75b7ee;
+}
+
+.remember-me-checkbox {
+  margin-right: 10px;
 }

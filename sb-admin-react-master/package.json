@@ -5,6 +5,7 @@
     "npm": ">=3.3 <4"
   },
   "dependencies": {
+    "acorn": "^6.0.2",
     "babel-polyfill": "6.13.0",
     "babel-runtime": "6.11.6",
     "bluebird": "3.4.5",
@@ -40,11 +41,13 @@
     "react-bootstrap": "^0.30.3",
     "react-chartjs": "^0.8.0",
     "react-dom": "15.3.1",
+    "react-hot-loader": "^4.3.11",
     "recharts": "^0.15.1",
     "sequelize": "3.24.1",
     "source-map-support": "0.4.2",
     "sqlite3": "3.1.4",
     "universal-router": "1.2.2",
+    "webpack-cli": "^3.1.2",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
@@ -113,6 +116,7 @@
     "stylelint-config-standard": "^13.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
+    "webpack-dev-server": "^3.1.9",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-middleware": "^1.5.1"
   },

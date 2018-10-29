@@ -13,7 +13,7 @@ import Button from 'react-bootstrap/lib/Button';
 import Panel from 'react-bootstrap/lib/Panel';
 import { FormControl, Checkbox } from 'react-bootstrap';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Login.css';
+import './Login.css';
 import history from '../../core/history';
 
 const title = 'Log In';
@@ -28,45 +28,33 @@ function Login(props, context) {
   context.setTitle(title);
   return (
     <div className="col-md-4 col-md-offset-4">
-      <div className="text-center">
-        <h1 className="login-brand-text">SB Admin React</h1>
-        <h3 className="text-muted">Created by <a href="http://startreact.com">StartReact.com</a> team</h3>
+      <div className="login-panel panel panel-default">
+        <div className="panel-heading">
+          <h3 className="panel-title"> Log hier in met je E-mail of Gebruikersnaam </h3>
+        </div>
+        <div className="panel-body">
+          <form role="form">
+            <fieldset>
+              <div className="form-group">
+                <input className="form-control" placeholder="E-mail address/ Gebruikersnaam" name="email" type="email" />
+              </div>
+              <div className="form-group">
+                <input className="form-control" placeholder="Wachtwoord" name="password" type="password" />
+              </div>
+              <div className="remember-me">
+                <input className="remember-me-checkbox" name="remember" type="checkbox" value="Remember Me" />
+                <label>Onthoud mij</label>
+              </div>
+              <a href="index.html" className="btn btn-lg btn-success btn-block">Login</a>
+            </fieldset>
+          </form>
+        </div>
       </div>
-
-      <Panel header={<h3>Please Sign In</h3>} className="login-panel">
-
-        <form role="form" onSubmit={(e) => { submitHandler(e); }}>
-          <fieldset>
-            <div className="form-group">
-              <FormControl
-                type="text"
-                className="form-control"
-                placeholder="Username"
-                name="name"
-              />
-            </div>
-
-            <div className="form-group">
-              <FormControl
-                className="form-control"
-                placeholder="Password"
-                type="password"
-                name="password"
-              />
-            </div>
-            <Checkbox label="Remember Me" > Remember Me </Checkbox>
-            <Button type="submit" bsSize="large" bsStyle="success" block>Login</Button>
-          </fieldset>
-        </form>
-
-      </Panel>
-
     </div>
-
   );
 }
 
 
 Login.contextTypes = { setTitle: PropTypes.func.isRequired };
 
-export default withStyles(s)(Login);
+export default Login;

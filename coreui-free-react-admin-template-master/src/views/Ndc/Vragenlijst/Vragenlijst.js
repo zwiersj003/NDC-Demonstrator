@@ -11,7 +11,6 @@ class Vragenlijst extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                    <InfoModule />
                         <tr className="gradeA">
                             <td class>
                                 <center><img src="../../../../assets/img/Smileyrood.png" height="40px" width="45px" position="text-center" /></center>
