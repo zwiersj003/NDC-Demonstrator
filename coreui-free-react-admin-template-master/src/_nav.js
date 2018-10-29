@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'Home',
-      url: '/modules',
+      url: '/home',
       icon: 'icon-home',
     },
     {
