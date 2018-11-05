@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'Home',
-      url: '/dashboard',
+      url: '/home',
       icon: 'icon-home',
     },
     {

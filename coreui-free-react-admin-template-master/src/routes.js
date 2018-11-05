@@ -197,6 +197,11 @@ const Deelnemer = Loadable({
   loading: Loading,
 });
 
+const Home = Loadable({
+  loader: () => import('./views/Ndc/Home/Home'),
+  loading: Loading,
+});
+
 
 
 
@@ -246,7 +251,7 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
-  { path: '/home', exact: true,  name: 'Vragenlijst', component: Deelnemer },
+  { path: '/home', exact: true,  name: 'Vragenlijst', component: Home },
   { path: '/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
 ];
 
