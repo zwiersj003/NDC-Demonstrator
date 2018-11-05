@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import { Button } from 'reactstrap'
 
 class Vragenlijst extends Component {
+    handleClick() {
+        console.log('Click happened')
+    }
+
     render() {
         return (
             <div className="animated fadeIn">
@@ -348,7 +353,8 @@ class Vragenlijst extends Component {
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                            <Button onClick={this.handleClick}>Click Me</Button>                     
+                            </div>
                     </div>
                 </div>
             </div>

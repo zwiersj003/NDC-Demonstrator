@@ -1,35 +1,20 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
+import { Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
+import ModulesInfo from '../../../components/Card/ModulesInfo'
 
 class Modules extends Component {
   render() {
     return (
       <div className="animated fadeIn">
-        <div className="card">
-          <div className="card-header">
-            <i className="icon-"></i>Modules
-          </div>
-          <div className="card-body">
+        <Card>
+          <CardHeader>
+            <i className="fa fa-align-justify"></i>Modules
+          </CardHeader>
+          <CardBody>
             <div className="module-card">
-              <div className="module-info">
-                <div className="row">
-                  <div className="col-3">
-                    <h4>Module Informatie:</h4>
-                    <p><b>Naam: </b>Module Bouw</p>
-                    <p><b>Locatie: </b>Utrecht</p>
-                    <p><b>Aantal Deelnemers: </b>10</p>
-                    <p><a href="/#/deelnemers"><b>Bekijk Alle Deelnemers</b></a></p>
-                  </div>
-                  <div className="col-3">
-                    <h4>Contactpersoon:</h4>
-                    <p><b>Naam: </b>Jasper Zwiers</p>
-                    <p><b>Telefoonnummer: </b>06 12 34 56 78</p>
-                    <p><b>Email: </b>example@example.com</p>
-                  </div>
-                </div>
-              </div>
+              <ModulesInfo />
               <div className="modules">
-                <table className="table table-bordered table-striped table-hover table-modules">
+                <Table responsive striped hover bordered id="table-modules">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -174,11 +159,11 @@ class Modules extends Component {
                       <td>21</td>
                     </tr>
                   </tbody>
-                </table>
+                </Table>
               </div>
             </div>
-          </div>
-        </div>
+          </CardBody>
+        </Card>
       </div>
     );
   }

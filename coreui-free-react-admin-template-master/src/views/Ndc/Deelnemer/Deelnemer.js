@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Vragenlijst from '../Vragenlijst/Vragenlijst'
 
 class Deelnemer extends Component {
     render() {
@@ -24,9 +23,9 @@ class Deelnemer extends Component {
                                     </div>
                                     <div className="col-6">
                                         <h4>Vragenlijsten:</h4>
-                                        <p><a href="/#/vragenlijst">0-Meting</a></p>
-                                        <p><a href="/#/vragenlijst">Tussentijdse Meting</a></p>
-                                        <p><a href="/#/vragenlijst">Eind Meting</a></p>
+                                        <p><a href="/#/modules/deelnemers/vragenlijst">0-Meting</a></p>
+                                        <p><a href="/#/modules/deelnemers/vragenlijst">Tussentijdse Meting</a></p>
+                                        <p><a href="/#/modules/deelnemers/vragenlijst">Eind Meting</a></p>
                                     </div>
                                 </div>
                             </div>

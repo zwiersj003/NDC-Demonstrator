@@ -44,7 +44,7 @@
 
 .module-card {
     .module-info {
-        height: 230px;
+        min-height: 230px;
         border-width: 0.2px;
         border-style: solid;
         border-color: lightgray;
@@ -62,10 +62,6 @@
     .modules {
         overflow: scroll;
         height: 500px;
-        .table-module {
-            overflow: scroll;
-            display: inline-table;
-        }
     }
 }
 
