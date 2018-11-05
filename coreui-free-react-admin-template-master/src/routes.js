@@ -192,6 +192,11 @@ const Vragenlijst = Loadable({
   loading: Loading,
 });
 
+const Rapportage = Loadable({
+  loader: () => import('./views/Ndc/Rapportage/Rapportage'),
+  loading: Loading,
+});
+
 
 
 
@@ -241,6 +246,7 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
+  { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
 ];
 
 export default routes;
