@@ -10,7 +10,7 @@ export default {
     },
     {
       name: 'Home',
-      url: '/dashboard',
+      url: '/home',
       icon: 'icon-home',
     },
     {
@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'Rapportage',
-      url: '/theme/colors',
+      url: '/rapportage',
       icon: 'fa fa-archive',
     },
     {

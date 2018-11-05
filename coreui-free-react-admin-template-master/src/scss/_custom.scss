@@ -10,9 +10,10 @@
         align: center;
         width: 14.27%;
     }
-    table {}
-}
+    table {
 
+    }
+}
 .deelnemer-card {
     .deelnemer-info {
         height: 200px;
@@ -66,4 +67,16 @@
             display: inline-table;
         }
     }
+}
+
+.vragenlijst > table {
+
+}
+
+.filter   { 
+    font-weight: bold;
+}
+
+.margin {
+    margin-left: 10px;
 }
