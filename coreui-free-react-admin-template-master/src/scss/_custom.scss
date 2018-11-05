@@ -4,18 +4,13 @@
     margin-right: 5%;
     td {
         background-color: white;
-        padding:15px;
+        padding: 15px;
         margin: 60px;
         text-align: center;
         align: center;
         width: 14.27%;
-
     }
-
-    table {
-        
-        
-    }
+    table {}
 }
 
 .deelnemer-card {
@@ -32,7 +27,7 @@
         a {
             text-decoration: underline;
         }
-        h4{
+        h4 {
             margin-top: 25px;
         }
     }
@@ -40,6 +35,33 @@
         overflow: scroll;
         height: 500px;
         .table-deelnemer {
+            overflow: scroll;
+            display: inline-table;
+        }
+    }
+}
+
+.module-card {
+    .module-info {
+        height: 230px;
+        border-width: 0.2px;
+        border-style: solid;
+        border-color: lightgray;
+        margin-bottom: 20px;
+    }
+    a {
+        text-decoration: underline;
+    }
+    h4 {
+        margin-top: 25px;
+    }
+    .row {
+        padding-left: 50px;
+    }
+    .modules {
+        overflow: scroll;
+        height: 500px;
+        .table-module {
             overflow: scroll;
             display: inline-table;
         }

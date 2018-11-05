@@ -27,10 +27,5 @@ export default {
       name: 'Vragenlijst',
       url: '/vragenlijst',
     },
-    {
-      name: 'Deelnemers',
-      url: '/deelnemers',
-    },
-
   ],
 };
