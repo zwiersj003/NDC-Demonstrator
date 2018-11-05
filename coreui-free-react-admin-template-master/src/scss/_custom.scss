@@ -11,12 +11,8 @@
         width: 14.27%;
 
     }
-
-    table {
-        
-        
-    }
 }
+
 
 .deelnemer-card {
     .deelnemer-info {
@@ -44,4 +40,15 @@
             display: inline-table;
         }
     }
+}
+.vragenlijst > table {
+
+}
+
+.filter   { 
+    font-weight: bold;
+}
+
+.margin {
+    margin-left: 10px;
 }

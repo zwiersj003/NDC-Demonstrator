@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'Rapportage',
-      url: '/theme/colors',
+      url: '/rapportage',
       icon: 'fa fa-archive',
     },
     {
