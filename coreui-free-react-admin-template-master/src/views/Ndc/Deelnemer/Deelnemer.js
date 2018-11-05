@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Col, Row } from 'reactstrap'
+import DeelnemerInfo from '../../../components/Card/DeelnemerInfo'
 
 class Deelnemer extends Component {
     render() {
@@ -10,25 +12,7 @@ class Deelnemer extends Component {
                     </div>
                     <div className="card-body">
                         <div className="deelnemer-card">
-                            <div className="deelnemer-info">
-                                <div className="row">
-                                    <div className="col-2">
-                                        <img src="../../../../assets/img/placeholder_avatar.jpg"/>
-                                    </div>
-                                    <div className="col-4">
-                                        <h4>Persoonlijke Informatie:</h4>
-                                        <p><b>Naam: </b>Jasper Zwiers</p>
-                                        <p><b>Leeftijd: </b>21</p>
-                                        <p><b>Status: </b>Uitgeprocedeerd</p>
-                                    </div>
-                                    <div className="col-6">
-                                        <h4>Vragenlijsten:</h4>
-                                        <p><a href="/#/modules/deelnemers/vragenlijst">0-Meting</a></p>
-                                        <p><a href="/#/modules/deelnemers/vragenlijst">Tussentijdse Meting</a></p>
-                                        <p><a href="/#/modules/deelnemers/vragenlijst">Eind Meting</a></p>
-                                    </div>
-                                </div>
-                            </div>
+                            <DeelnemerInfo />
                             <div className="deelnemers">
                                 <table className="table table-bordered table-striped table-hover table-deelnemer">
                                     <thead>

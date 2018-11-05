@@ -10,20 +10,19 @@
         align: center;
         width: 14.27%;
     }
-    table {
-
-    }
 }
+
 .deelnemer-card {
     .deelnemer-info {
-        height: 200px;
+        min-height: 200px;
         border-width: 0.2px;
         border-style: solid;
         border-color: lightgray;
         margin-bottom: 20px;
+        padding-left: 20px;
         img {
-            height: 150px;
-            margin: 25px;
+            max-height: 180px;
+            padding-top: 20px;
         }
         a {
             text-decoration: underline;
@@ -65,11 +64,9 @@
     }
 }
 
-.vragenlijst > table {
+.vragenlijst>table {}
 
-}
-
-.filter   { 
+.filter {
     font-weight: bold;
 }
 
