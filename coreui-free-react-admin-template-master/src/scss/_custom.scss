@@ -2,7 +2,6 @@
 .vragenlijst {
     margin-left: 5%;
     margin-right: 5%;
-
     td {
         background-color: white;
         padding:15px;
@@ -20,3 +19,32 @@
 }
 
 
+}
+
+.deelnemer-card {
+    .deelnemer-info {
+        height: 200px;
+        border-width: 0.2px;
+        border-style: solid;
+        border-color: lightgray;
+        margin-bottom: 20px;
+        img {
+            height: 150px;
+            margin: 25px;
+        }
+        a {
+            text-decoration: underline;
+        }
+        h4{
+            margin-top: 25px;
+        }
+    }
+    .deelnemers {
+        overflow: scroll;
+        height: 500px;
+        .table-deelnemer {
+            overflow: scroll;
+            display: inline-table;
+        }
+    }
+}
