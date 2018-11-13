@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, Table } from 'reactstrap';
 import ModulesInfo from '../../../components/Card/ModulesInfo'
+import ModulesTable from '../../../components/Table/ModulesTable'
 
 class Modules extends Component {
   
@@ -19,7 +20,12 @@ class Modules extends Component {
       .catch(err => console.log(err))
   }
 
-  renderModule = ({ moduleID, naam, locatie }) => <tr><td>{moduleID}</td><td>{naam}</td><td>{locatie}</td></tr>
+  renderModule = ({ moduleID, naam, locatie }) => (
+    <tr>
+      <td>{moduleID}</td>
+      <td>{naam}</td>
+      <td>{locatie}</td>
+    </tr>)
   
   render() {
     const { modules } = this.state
@@ -32,20 +38,7 @@ class Modules extends Component {
           <CardBody>
             <div className="module-card">
               <ModulesInfo />
-              <div className="modules">
-                <Table responsive striped hover bordered id="table-modules">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Naam</th>
-                      <th>Locatie</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {modules.map(this.renderModule)}
-                  </tbody>
-                </Table>
-              </div>
+              <ModulesTable />
             </div>
           </CardBody>
         </Card>

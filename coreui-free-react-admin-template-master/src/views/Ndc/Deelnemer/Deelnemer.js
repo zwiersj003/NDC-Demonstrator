@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import DeelnemerInfo from '../../../components/Card/DeelnemerInfo'
-import DeelnemerTable from '../../../components/Table/DeelnemerRow'
+import DeelnemerTable from '../../../components/Table/DeelnemerTable'
 
 class Deelnemer extends Component {
     render() {
