@@ -192,6 +192,21 @@ const Vragenlijst = Loadable({
   loading: Loading,
 });
 
+const Deelnemer = Loadable({
+  loader: () => import('./views/Ndc/Deelnemer/Deelnemer'),
+  loading: Loading,
+});
+
+const Home = Loadable({
+  loader: () => import('./views/Ndc/Home/Home'),
+  loading: Loading,
+});
+
+const Rapportage = Loadable({
+  loader: () => import('./views/Ndc/Rapportage/Rapportage'),
+  loading: Loading,
+});
+
 
 
 
@@ -240,7 +255,10 @@ const routes = [
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
-  { path: '/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
+  { path: '/modules/deelnemers/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
+  { path: '/home', exact: true,  name: 'Vragenlijst', component: Home },
+  { path: '/modules/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
+  { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
 ];
 
 export default routes;

@@ -2,16 +2,77 @@
 .vragenlijst {
     margin-left: 5%;
     margin-right: 5%;
-
     td {
         background-color: white;
+        padding: 15px;
+        margin: 60px;
+        text-align: center;
+        align: center;
+        width: 14.27%;
     }
-
-    table {
-        
+    textarea {
+          width: 30%;
     }
 }
 
-.vragenlijst > table {
+.deelnemer-card {
+    .deelnemer-info {
+        min-height: 200px;
+        border-width: 0.2px;
+        border-style: solid;
+        border-color: lightgray;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        img {
+            max-height: 180px;
+            padding-top: 20px;
+        }
+        a {
+            text-decoration: underline;
+        }
+        h4 {
+            margin-top: 25px;
+        }
+    }
+    .deelnemers {
+        overflow: scroll;
+        height: 500px;
+        .table-deelnemer {
+            overflow: scroll;
+            display: inline-table;
+        }
+    }
+}
 
+.module-card {
+    .module-info {
+        min-height: 230px;
+        border-width: 0.2px;
+        border-style: solid;
+        border-color: lightgray;
+        margin-bottom: 20px;
+    }
+    a {
+        text-decoration: underline;
+    }
+    h4 {
+        margin-top: 25px;
+    }
+    .row {
+        padding-left: 50px;
+    }
+    .modules {
+        overflow: scroll;
+        height: 500px;
+    }
+}
+
+.vragenlijst>table {}
+
+.filter {
+    font-weight: bold;
+}
+
+.margin {
+    margin-left: 10px;
 }
