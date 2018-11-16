@@ -7,7 +7,6 @@
         padding: 15px;
         margin: 60px;
         text-align: center;
-        align: center;
         width: 14.27%;
     }
     textarea {
@@ -36,7 +35,7 @@
     }
     .deelnemers {
         overflow: scroll;
-        height: 500px;
+        max-height: 450px;
         .table-deelnemer {
             overflow: scroll;
             display: inline-table;
@@ -63,7 +62,7 @@
     }
     .modules {
         overflow: scroll;
-        height: 500px;
+        max-height: 450px;
     }
 }
 
