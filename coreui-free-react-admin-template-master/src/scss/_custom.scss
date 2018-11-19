@@ -4,15 +4,13 @@
     margin-right: 5%;
     td {
         background-color: white;
-        padding:15px;
+        padding: 15px;
         margin: 60px;
         text-align: center;
         align: center;
         width: 14.27%;
-
     }
 }
-
 
 .deelnemer-card {
     .deelnemer-info {
@@ -28,7 +26,7 @@
         a {
             text-decoration: underline;
         }
-        h4{
+        h4 {
             margin-top: 25px;
         }
     }
@@ -41,14 +39,36 @@
         }
     }
 }
-.vragenlijst > table {
 
-}
+.vragenlijst>table {}
 
-.filter   { 
+.filter {
     font-weight: bold;
 }
 
 .margin {
     margin-left: 10px;
+}
+
+.home {
+    .date-align {
+        text-align: right;
+        font-weight: bold;
+        margin-bottom: -10px;
+    }
+    .date-align1 {
+        text-align: left;
+        font-weight: bold;
+        margin-bottom: 0px;
+    }
+    .link-buttons-card {
+        a {
+            color: white;
+        }
+    }
+    .statistics-card {
+        h4 {
+            color: black;
+        }
+    }
 }
