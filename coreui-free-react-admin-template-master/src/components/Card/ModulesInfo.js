@@ -11,7 +11,7 @@ class ModulesInfo extends Component {
                         <p><b>Naam: </b>Module Bouw</p>
                         <p><b>Locatie: </b>Utrecht</p>
                         <p><b>Aantal Deelnemers: </b>10</p>
-                        <p><a href="/#/modules/deelnemers"><b>Bekijk Alle Deelnemers</b></a></p>
+                        <p><a href="/#/modules/deelnemers"><b>Bekijk deelnemers van deze module</b></a></p>
                     </Col>
                     <Col xs="12" md="6" lg="4">
                         <h4>Contactpersoon:</h4>

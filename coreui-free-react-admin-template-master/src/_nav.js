@@ -2,7 +2,7 @@ export default {
   items: [
     {
       title: true,
-      name: 'NDC - Pages',
+      name: 'New Dutch Connections',
       wrapper: {
         element: '',
         attributes: {},
@@ -22,10 +22,6 @@ export default {
       name: 'Rapportage',
       url: '/rapportage',
       icon: 'fa fa-archive',
-    },
-    {
-      name: 'Vragenlijst',
-      url: '/modules/deelnemers/vragenlijst',
-    },
+    }
   ],
 };

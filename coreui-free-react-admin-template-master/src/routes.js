@@ -213,7 +213,7 @@ const Rapportage = Loadable({
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/', exact: true, name: 'Home', component: DefaultLayout },
+  { path: '/', exact: true, name: 'Home', component: Home },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
@@ -256,7 +256,7 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/modules/deelnemers/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
-  { path: '/home', exact: true,  name: 'Vragenlijst', component: Home },
+  { path: '/home', exact: true,  name: '', component: Home },
   { path: '/modules/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
   { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
 ];

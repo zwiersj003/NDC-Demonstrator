@@ -15,7 +15,7 @@ class DefaultFooter extends Component {
 
     return (
       <React.Fragment>
-        <span>&copy; Jasper Zwiers</span>
+        <span>&copy; New Dutch Connections - 2018</span>
       </React.Fragment>
     );
   }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Badge, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem, NavLink } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import { AppAsideToggler, AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
@@ -22,8 +21,8 @@ class DefaultHeader extends Component {
       <React.Fragment>
         <AppSidebarToggler className="d-lg-none" display="md" mobile />
         <AppNavbarBrand
-          full={{ src: logo, width: 120, height: 30, alt: 'NDC Logo' }}
-          minimized={{ src: sygnet, width: 30, height: 30, alt: 'NDC Logo' }}
+          full={{ src: logo, width: 130, height: 30, alt: 'NDC Logo' }}
+          minimized={{ src: logo, width: 130, height: 30, alt: 'NDC Logo' }}
         />
         {/*<AppAsideToggler className="d-lg-none" mobile />*/}
       </React.Fragment>
