@@ -1,6 +1,71 @@
 import React, { Component } from 'react'
+import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Col, Collapse, Fade, Row } from 'reactstrap';
+
 
 class Rapportage extends Component {
+    constructor(props) {
+        super(props);
+        this.onEntering = this.onEntering.bind(this);
+        this.onEntered = this.onEntered.bind(this);
+        this.onExiting = this.onExiting.bind(this);
+        this.onExited = this.onExited.bind(this);
+        this.toggle = this.toggle.bind(this);
+        this.toggleAccordion = this.toggleAccordion.bind(this);
+        this.toggleCustom = this.toggleCustom.bind(this);
+        this.toggleFade = this.toggleFade.bind(this);
+        this.state = {
+          collapse: false,
+          accordion: [true, true, false],
+          custom: [false, false, false, false, false, false, false, false, false],
+          status: 'Closed',
+          fadeIn: true,
+          timeout: 300,
+        };
+      }
+    
+      onEntering() {
+        this.setState({ status: 'Opening...' });
+      }
+    
+      onEntered() {
+        this.setState({ status: 'Opened' });
+      }
+    
+      onExiting() {
+        this.setState({ status: 'Closing...' });
+      }
+    
+      onExited() {
+        this.setState({ status: 'Closed' });
+      }
+    
+      toggle() {
+        this.setState({ collapse: !this.state.collapse });
+      }
+    
+      toggleAccordion(tab) {
+    
+        const prevState = this.state.accordion;
+        const state = prevState.map((x, index) => tab === index ? !x : false);
+    
+        this.setState({
+          accordion: state,
+        });
+      }
+    
+      toggleCustom(tab) {
+    
+        const prevState = this.state.custom;
+        const state = prevState.map((x, index) => tab === index ? !x : false);
+    
+        this.setState({
+          custom: state,
+        });
+      }
+    
+      toggleFade() {
+        this.setState({ fadeIn: !this.state.fadeIn });
+      }
     render() {
         return (
             <div className="animated fadeIn">
@@ -14,9 +79,20 @@ class Rapportage extends Component {
                                 <div className="deelnemer-card">
 
                                     <h2>Filteren op:</h2>
-                                    <p>Leeftijd:</p>
+                                
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(0)} aria-expanded={this.state.custom[0]} aria-controls="exampleAccordion1">Leeftijd</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[0]} data-parent="#exampleAccordion" id="exampleAccordion1">
+                                <p>
+                                Kjell
+                                </p>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter">Module:</p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(1)} aria-expanded={this.state.custom[1]} aria-controls="exampleAccordion2">Module</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[1]} data-parent="#exampleAccordion" id="exampleAccordion2">
+                                
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -37,8 +113,14 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter">Status:</p>
+
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(2)} aria-expanded={this.state.custom[2]} aria-controls="exampleAccordion3">Status</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[2]} data-parent="#exampleAccordion" id="exampleAccordion3">
+                                    
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -59,8 +141,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter">Voortgang per module:</p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(3)} aria-expanded={this.state.custom[3]} aria-controls="exampleAccordion4">Voorgang per module</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[3]} data-parent="#exampleAccordion" id="exampleAccordion4">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -82,8 +168,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter"> Locatie: </p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(4)} aria-expanded={this.state.custom[4]} aria-controls="exampleAccordion5">Locatie</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[4]} data-parent="#exampleAccordion" id="exampleAccordion5">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -104,8 +194,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter">Voortang per module per periode:</p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(5)} aria-expanded={this.state.custom[5]} aria-controls="exampleAccordion6">Voorgang per module per periode</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[5]} data-parent="#exampleAccordion" id="exampleAccordion6">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -126,8 +220,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
-
-                                    <p class="filter">Voortgang per locatie:</p>
+                                </Collapse>
+                                </dev>   
+                                    
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(6)} aria-expanded={this.state.custom[6]} aria-controls="exampleAccordion7">Voortgang per locatie</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[6]} data-parent="#exampleAccordion" id="exampleAccordion7">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -148,8 +246,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>    
 
-                                    <p class="filter">Voortgang module t.o.v vorige periode(n):</p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(7)} aria-expanded={this.state.custom[7]} aria-controls="exampleAccordion8">Voortgang module t.o.v. vorige periode(n)</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[7]} data-parent="#exampleAccordion" id="exampleAccordion8">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -170,8 +272,12 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
+                                </Collapse>
+                                </dev>
 
-                                    <p class="filter">Score van voortgang:</p>
+                                <button class='accordion'className="accordion" onClick={() => this.toggleCustom(8)} aria-expanded={this.state.custom[8]} aria-controls="exampleAccordion9">Score van voortgang</button>
+                                <dev class="accordion-content">
+                                <Collapse isOpen={this.state.custom[8]} data-parent="#exampleAccordion" id="exampleAccordion9">
                                     <form>
                                         <div class="multiselect">
                                             <div class="selectBox" onclick="showCheckboxes()">
@@ -192,7 +298,8 @@ class Rapportage extends Component {
                                             </div>
                                         </div>
                                     </form>
-
+                                </Collapse>
+                                </dev>
 
 
                                 </div>

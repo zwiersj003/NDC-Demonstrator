@@ -25,12 +25,7 @@ export default {
     },
     {
       name: 'Vragenlijst',
-      url: '/vragenlijst',
+      url: '/modules/deelnemers/vragenlijst',
     },
-    {
-      name: 'Deelnemers',
-      url: '/deelnemers',
-    },
-
   ],
 };
