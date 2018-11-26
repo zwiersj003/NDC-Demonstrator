@@ -1,34 +1,44 @@
-import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, Table } from 'reactstrap';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import { Card, CardBody, CardHeader, Table } from 'reactstrap'
 import ModulesInfo from '../../../components/Card/ModulesInfo'
 import ModulesTable from '../../../components/Table/ModulesTable'
 
 class Modules extends Component {
   
-  state = {
-    modules: []
+  constructor(props) {
+    super(props)
+    this.state = {
+      modules: [{
+        naam: '',
+        locatie: '',
+        moduleID: ''
+      }],
+      currentlySelected: 0
+    }
+
+    this.getCurrentlySelected = this.getCurrentlySelected.bind(this)
   }
 
-  componentDidMount() {
+  componentDidMount(){
     this.getModules()
   }
 
   getModules = _ => {
     fetch('http://localhost:4000/modules')
       .then(response =>response.json())
-      .then(response => this.setState({ modules: response.data }))
+      .then(response => this.setState({...this.state, modules: response.data}))
       .catch(err => console.log(err))
+    this.forceUpdate()
   }
 
-  renderModule = ({ moduleID, naam, locatie }) => (
-    <tr>
-      <td>{moduleID}</td>
-      <td>{naam}</td>
-      <td>{locatie}</td>
-    </tr>)
+  getCurrentlySelected(data){
+    this.setState({ currentlySelected: data - 1 })
+  }
   
   render() {
-    const { modules } = this.state
+    let { modules, currentlySelected } = this.state
+    const modulesObject = modules[currentlySelected]
     return (
       <div className="animated fadeIn">
         <Card>
@@ -37,13 +47,13 @@ class Modules extends Component {
           </CardHeader>
           <CardBody>
             <div className="module-card">
-              <ModulesInfo />
-              <ModulesTable />
+              <ModulesInfo modulesObject={modulesObject}/>
+              <ModulesTable getCurrentlySelected={this.getCurrentlySelected} modules={modules}/>
             </div>
           </CardBody>
         </Card>
       </div>
-    );
+    )
   }
 }
 

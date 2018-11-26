@@ -257,7 +257,7 @@ const routes = [
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/modules/deelnemers/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
   { path: '/home', exact: true,  name: '', component: Home },
-  { path: '/modules/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
+  { path: '/modules/:id/deelnemers/', exact: true,  name: 'Deelnemers', component: Deelnemer },
   { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
 ];
 

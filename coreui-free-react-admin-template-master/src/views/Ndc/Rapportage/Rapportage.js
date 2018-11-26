@@ -84,7 +84,7 @@ class Rapportage extends Component {
                                 <dev class="accordion-content">
                                 <Collapse isOpen={this.state.custom[0]} data-parent="#exampleAccordion" id="exampleAccordion1">
                                 <p>
-                                Kjell
+                                To do
                                 </p>
                                 </Collapse>
                                 </dev>

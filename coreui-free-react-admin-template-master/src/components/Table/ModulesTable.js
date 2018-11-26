@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
 
-class DeelnemerRow extends Component {
+class ModulesTable extends Component {
 
-    state = {
-        modules: []
+    constructor(props) {
+        super(props)
     }
 
-    componentDidMount() {
-        this.getModules()
-    }
-
-    getModules = _ => {
-        fetch('http://localhost:4000/modules')
-            .then(response => response.json())
-            .then(response => this.setState({ modules: response.data }))
-            .catch(err => console.log(err))
-    }
-
-    renderModule = ({ moduleID, naam, locatie }) => <tr><td>{moduleID}</td><td>{naam}</td><td>{locatie}</td></tr>
+    renderModule = ({ moduleID, naam, locatie }) => <tr onClick={() => this.props.getCurrentlySelected(moduleID)}><td>{moduleID}</td><td>{naam}</td><td>{locatie}</td></tr>
 
     render() {
-        const { modules } = this.state
+        let { modules } = this.props
         return (
             <div className="modules">
                 <Table responsive striped hover bordered id="table-modules">
@@ -41,4 +30,4 @@ class DeelnemerRow extends Component {
     }
 }
 
-export default DeelnemerRow
+export default ModulesTable

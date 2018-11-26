@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
 
-class DeelnemerRow extends Component {
+class DeelnemerTable extends Component {
 
-    state = {
-        deelnemers: []
-    }
-
-    componentDidMount() {
-        this.getDeelnemers()
-    }
-
-    getDeelnemers = _ => {
-        fetch('http://localhost:4000/moduledeelnemers?modules=1')
-            .then(response => response.json())
-            .then(response => this.setState({ deelnemers: response.data }))
-            .catch(err => console.log(err))
+    constructor(props) {
+        super(props)
     }
 
     calculateAge(geboortedatum) { // birthday is a date
@@ -35,14 +24,14 @@ class DeelnemerRow extends Component {
     }
 
     renderDeelnemer = ({ deelnemerID, voornaam, geboortedatum }) => (
-        <tr key={deelnemerID}>
+        <tr key={deelnemerID} onClick={() => this.props.getSelectedDeelnemer(deelnemerID)}>
             <td>{deelnemerID}</td>
             <td>{voornaam}</td>
             <td>{this.calculateAge(geboortedatum)}</td>
         </tr>)
 
     render() {
-        const { deelnemers } = this.state
+        let { deelnemers } = this.props
         return (
             <div className="deelnemers">
                 <Table bordered striped hover className="table-deelnemer">
@@ -62,4 +51,4 @@ class DeelnemerRow extends Component {
     }
 }
 
-export default DeelnemerRow
+export default DeelnemerTable
