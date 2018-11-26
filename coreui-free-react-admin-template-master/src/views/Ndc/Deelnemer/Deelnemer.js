@@ -25,7 +25,7 @@ class Deelnemer extends Component {
     }
 
     getSelectedDeelnemer(data) {
-        this.setState({ currentlySelectedDeelnemer: data - 1 })
+        this.setState({ currentlySelectedDeelnemer: data })
     }
 
     getDeelnemers = _ => {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import './App.scss';
+import './App.scss'
+import 'react-table/react-table.css'
 
 // Containers
 import { DefaultLayout } from './containers';

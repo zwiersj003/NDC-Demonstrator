@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Table } from 'reactstrap'
+import ReactTable from 'react-table'
 
 class DeelnemerTable extends Component {
 
@@ -23,29 +24,40 @@ class DeelnemerTable extends Component {
         return age
     }
 
-    renderDeelnemer = ({ deelnemerID, voornaam, geboortedatum }) => (
-        <tr key={deelnemerID} onClick={() => this.props.getSelectedDeelnemer(deelnemerID)}>
-            <td>{deelnemerID}</td>
-            <td>{voornaam}</td>
-            <td>{this.calculateAge(geboortedatum)}</td>
-        </tr>)
+    // renderDeelnemer = ({ deelnemerID, voornaam, geboortedatum }) => (
+    //     <tr key={deelnemerID} onClick={() => this.props.getSelectedDeelnemer(deelnemerID)}>
+    //         <td>{deelnemerID}</td>
+    //         <td>{voornaam}</td>
+    //         <td>{this.calculateAge(geboortedatum)}</td>
+    //     </tr>)
 
     render() {
         let { deelnemers } = this.props
+        const deelnemersLength = deelnemers.length
+
+        const columns = [{
+            Header: 'ID',
+            accessor: 'deelnemerID'
+        },
+        {
+            Header: 'Voornaam',
+            accessor: 'voornaam'
+        },
+        {
+            Header: 'Achternaam',
+            accessor: 'achternaam'
+        }]
+
         return (
             <div className="deelnemers">
-                <Table bordered striped hover className="table-deelnemer">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Naam</th>
-                            <th>Leeftijd</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {deelnemers.map(this.renderDeelnemer)}
-                    </tbody>
-                </Table>
+                <ReactTable data={deelnemers} columns={columns} pageSize={deelnemersLength} showPagination={false} getTdProps={(state, rowInfo, column, instance) => {
+                    return {
+                        onClick: () => {
+                            console.log("It was in this row:", rowInfo)
+                            this.props.getSelectedDeelnemer(parseInt(rowInfo.nestingPath))
+                        }
+                    };
+                }}/>
             </div>
         )
     }
