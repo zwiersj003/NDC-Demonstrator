@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Table } from 'reactstrap'
+import React, { Component } from 'react'
 import ReactTable from 'react-table'
 
 class DeelnemerTable extends Component {
@@ -50,7 +49,7 @@ class DeelnemerTable extends Component {
 
         return (
             <div className="deelnemers">
-                <ReactTable data={deelnemers} columns={columns} pageSize={deelnemersLength} showPagination={false} getTdProps={(state, rowInfo, column, instance) => {
+                <ReactTable className="-striped -highlight" data={deelnemers} columns={columns} pageSize={deelnemersLength} showPagination={false} getTdProps={(state, rowInfo, column, instance) => {
                     return {
                         onClick: () => {
                             console.log("It was in this row:", rowInfo)

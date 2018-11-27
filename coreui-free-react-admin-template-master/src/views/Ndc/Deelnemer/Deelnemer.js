@@ -42,7 +42,7 @@ class Deelnemer extends Component {
             <div className="animated fadeIn">
                 <div className="card">
                     <div className="card-header">
-                        <i className="icon-people"></i>Deelnemers - Module {deelnemers[0].naam}
+                        <i className="icon-people"></i>Deelnemers - Module {deelnemers[0].moduleNaam}
                     </div>
                     <div className="card-body">
                         <div className="deelnemer-card">
