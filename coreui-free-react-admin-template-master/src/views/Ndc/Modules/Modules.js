@@ -17,7 +17,7 @@ class Modules extends Component {
       currentlySelected: 0
     }
 
-    this.getCurrentlySelected = this.getCurrentlySelected.bind(this)
+    this.getSelectedModule = this.getSelectedModule.bind(this)
   }
 
   componentDidMount(){
@@ -32,8 +32,8 @@ class Modules extends Component {
     this.forceUpdate()
   }
 
-  getCurrentlySelected(data){
-    this.setState({ currentlySelected: data - 1 })
+  getSelectedModule(data){
+    this.setState({ currentlySelected: data })
   }
   
   render() {
@@ -48,7 +48,7 @@ class Modules extends Component {
           <CardBody>
             <div className="module-card">
               <ModulesInfo modulesObject={modulesObject}/>
-              <ModulesTable getCurrentlySelected={this.getCurrentlySelected} modules={modules}/>
+              <ModulesTable getSelectedModule={this.getSelectedModule} modules={modules}/>
             </div>
           </CardBody>
         </Card>

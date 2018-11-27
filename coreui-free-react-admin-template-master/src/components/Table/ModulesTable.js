@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from 'reactstrap'
+import ReactTable from 'react-table'
 
 class ModulesTable extends Component {
 
@@ -11,20 +11,31 @@ class ModulesTable extends Component {
 
     render() {
         let { modules } = this.props
+        const modulesLength = modules.length
+
+        const columns = [{
+            Header: 'ID',
+            accessor: 'moduleID'
+        },
+        {
+            Header: 'Module',
+            accessor: 'naam'
+        },
+        {
+            Header: 'Locatie',
+            accessor: 'locatie'
+        }]
+
         return (
             <div className="modules">
-                <Table responsive striped hover bordered id="table-modules">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Naam</th>
-                            <th>Locatie</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {modules.map(this.renderModule)}
-                    </tbody>
-                </Table>
+                <ReactTable className="-striped -highlight" data={modules} columns={columns} pageSize={modulesLength} showPagination={false} getTdProps={(state, rowInfo, column, instance) => {
+                    return {
+                        onClick: () => {
+                            console.log("It was in this row:", rowInfo)
+                            this.props.getSelectedModule(parseInt(rowInfo.nestingPath))
+                        }
+                    };
+                }} />
             </div>
         )
     }
