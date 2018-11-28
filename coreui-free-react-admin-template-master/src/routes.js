@@ -5,16 +5,6 @@ function Loading() {
   return <div>Loading...</div>;
 }
 
-const Users = Loadable({
-  loader: () => import('./views/Users/Users'),
-  loading: Loading,
-});
-
-const User = Loadable({
-  loader: () => import('./views/Users/User'),
-  loading: Loading,
-});
-
 const Modules = Loadable({
   loader: () => import('./views/Ndc/Modules/Modules'),
   loading: Loading,
@@ -43,8 +33,6 @@ const Rapportage = Loadable({
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: Home },
-  { path: '/users', exact: true,  name: 'Users', component: Users },
-  { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/modules/deelnemers/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
   { path: '/home', exact: true,  name: '', component: Home },
