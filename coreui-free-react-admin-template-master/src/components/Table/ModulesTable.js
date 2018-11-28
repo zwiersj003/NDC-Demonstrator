@@ -24,6 +24,9 @@ class ModulesTable extends Component {
         {
             Header: 'Locatie',
             accessor: 'locatie'
+        }, {
+            Header: 'Jaar',
+            accessor: 'jaar'
         }]
 
         return (

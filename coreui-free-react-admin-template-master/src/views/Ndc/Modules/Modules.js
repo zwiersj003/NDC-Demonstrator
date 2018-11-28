@@ -12,6 +12,7 @@ class Modules extends Component {
         naam: '',
         locatie: '',
         moduleID: '',
+        jaar: '',
         voornaam: '',
         achternaam: '',
         telefoonnummer: '',
