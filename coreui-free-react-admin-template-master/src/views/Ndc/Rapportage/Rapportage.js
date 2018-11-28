@@ -86,7 +86,6 @@ class Rapportage extends Component {
 
     render() {
         let { deelnemers } = this.state
-        const deelnemersLength = deelnemers.length
 
         const columns = [{
             Header: 'ID',
