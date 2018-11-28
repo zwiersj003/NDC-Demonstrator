@@ -12,7 +12,11 @@ class Modules extends Component {
       modules: [{
         naam: '',
         locatie: '',
-        moduleID: ''
+        moduleID: '',
+        voornaam: '',
+        achternaam: '',
+        telefoonnummer: '',
+        email: ''
       }],
       currentlySelected: 0
     }

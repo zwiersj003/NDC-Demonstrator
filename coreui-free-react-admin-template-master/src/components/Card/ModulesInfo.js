@@ -29,9 +29,9 @@ class ModulesInfo extends Component {
                     </Col>
                     <Col xs="12" md="6" lg="4">
                         <h4>Contactpersoon:</h4>
-                        <p><b>Naam: </b>Jasper Zwiers</p>
-                        <p><b>Telefoonnummer: </b>06 12 34 56 78</p>
-                        <p><b>Email: </b>example@example.com</p>
+                        <p><b>Naam: </b>{modulesObject.voornaam + ' ' + modulesObject.achternaam}</p>
+                        <p><b>Telefoonnummer: </b>{modulesObject.telefoonnummer}</p>
+                        <p><b>Email: </b>{modulesObject.email}</p>
                     </Col>
                 </Row>
             </div>
