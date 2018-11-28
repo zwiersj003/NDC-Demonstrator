@@ -32,7 +32,6 @@ const Rapportage = Loadable({
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
-  { path: '/', exact: true, name: 'Home', component: Home },
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
   { path: '/modules/deelnemers/vragenlijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
   { path: '/home', exact: true,  name: '', component: Home },
