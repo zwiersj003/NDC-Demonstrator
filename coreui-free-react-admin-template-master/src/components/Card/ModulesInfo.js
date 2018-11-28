@@ -9,7 +9,7 @@ class ModulesInfo extends Component {
     }
 
     render() {
-        let { modulesObject, amountOfDeelnemers } = this.props
+        let { modulesObject } = this.props
 
         const DeelnemerRouteButton = withRouter(({ history }) => (
         <Button onClick={() => { history.push(`/modules/${modulesObject.moduleID}/deelnemers`) }}>
@@ -24,7 +24,7 @@ class ModulesInfo extends Component {
                         <h4>Module Informatie:</h4>
                         <p><b>Naam: </b>{modulesObject.naam}</p>
                         <p><b>Locatie: </b>{modulesObject.locatie}</p>
-                        <p><b>Aantal Deelnemers: </b>10</p>
+                        <p><b>Aantal Deelnemers: </b>{modulesObject.amountOfDeelnemers}</p>
                         <p><DeelnemerRouteButton /></p>
                     </Col>
                     <Col xs="12" md="6" lg="4">

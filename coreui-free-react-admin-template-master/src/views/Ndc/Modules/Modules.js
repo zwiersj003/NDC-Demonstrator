@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { Card, CardBody, CardHeader, Table } from 'reactstrap'
+import { Card, CardBody, CardHeader } from 'reactstrap'
 import ModulesInfo from '../../../components/Card/ModulesInfo'
 import ModulesTable from '../../../components/Table/ModulesTable'
 
@@ -16,7 +15,8 @@ class Modules extends Component {
         voornaam: '',
         achternaam: '',
         telefoonnummer: '',
-        email: ''
+        email: '',
+        amountOfDeelnemers: ''
       }],
       currentlySelected: 0
     }
