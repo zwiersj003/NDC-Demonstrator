@@ -11,7 +11,7 @@ const Modules = Loadable({
 });
 
 const Vragenlijst = Loadable({
-  loader: () => import('./views/Ndc/Vragenlijst/Vragenlijst'),
+  loader: () => import('./views/Ndc/Vragenlijst/Vragenlijstv2'),
   loading: Loading,
 });
 
