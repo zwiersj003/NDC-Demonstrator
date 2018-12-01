@@ -39,9 +39,9 @@ class DeelnemerInfo extends Component {
                     </Col>
                     <Col md="6" lg="4">
                         <h4>Vragenlijsten:</h4>
-                        <p><a href="/#/modules/deelnemers/vragenlijst">0-Meting</a></p>
-                        <p><a href="/#/modules/deelnemers/vragenlijst">Tussentijdse Meting</a></p>
-                        <p><a href="/#/modules/deelnemers/vragenlijst">Eind Meting</a></p>
+                        <p><a href="/modules/deelnemers/vragenlijst">0-Meting</a></p>
+                        <p><a href="/modules/deelnemers/vragenlijst">Tussentijdse Meting</a></p>
+                        <p><a href="/modules/deelnemers/vragenlijst">Eind Meting</a></p>
                     </Col>
                 </Row>
             </div>
