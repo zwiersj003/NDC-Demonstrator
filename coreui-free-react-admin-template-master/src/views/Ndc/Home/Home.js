@@ -131,28 +131,28 @@ class Home extends Component {
                                     <Col xs="12" sm="6" lg="3">
                                         <Card className="text-white bg-info">
                                             <CardBody>
-                                                <div className="text-value"> <a href="url">Modules</a></div>
+                                                <div className="text-value"> <a href="/modules">Modules</a></div>
                                             </CardBody>
                                         </Card>
                                     </Col>
                                     <Col xs="12" sm="6" lg="3">
                                         <Card className="text-white bg-info">
                                             <CardBody>
-                                                <div className="text-value"> <a href="url">Deelnemers</a></div>
+                                                <div className="text-value"> <a href="/">Deelnemers</a></div>
                                             </CardBody>
                                         </Card>
                                     </Col>
                                     <Col xs="12" sm="6" lg="3">
                                         <Card className="text-white bg-info">
                                             <CardBody>
-                                                <div className="text-value"> <a href="url">Locatie(s)</a> </div>
+                                                <div className="text-value"> <a href="/">Locatie(s)</a> </div>
                                             </CardBody>
                                         </Card>
                                     </Col>
                                     <Col xs="12" sm="6" lg="3">
                                         <Card className="text-white bg-info">
                                             <CardBody>
-                                                <div className="text-value"> <a href="url">Rapportage</a></div>
+                                                <div className="text-value"> <a href="/rapportage">Rapportage</a></div>
                                             </CardBody>
                                         </Card>
                                     </Col>

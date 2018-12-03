@@ -259,7 +259,7 @@ class Vragenlijstv2 extends Component {
                     .then(alert('Vragenlijst opgeslagen'))
                     .catch(err => console.error(err))
         } catch(err) {
-            alert('Vragenlijst niet opgeslagen\nNiet alle vragen zijn beantwoord')
+            alert('Vragenlijst niet opgeslagen\nReden: Niet alle vragen zijn beantwoord')
         }
     }
 
