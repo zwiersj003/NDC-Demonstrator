@@ -61,7 +61,6 @@ class Vragenlijstv2 extends Component {
         var vraag7 = null
         var vraag8 = null
         var vraag9 = null
-        var werkVraag = null
         var opmerkingen = null
 
         if (this.state.vragenlijst[0] != null) {
@@ -74,7 +73,6 @@ class Vragenlijstv2 extends Component {
             vraag7 = this.state.vragenlijst[0].vraag7
             vraag8 = this.state.vragenlijst[0].vraag8
             vraag9 = this.state.vragenlijst[0].vraag9
-            werkVraag = this.state.vragenlijst[0].werkVraag
             opmerkingen = this.state.vragenlijst[0].opmerkingen
         }
 
@@ -240,16 +238,8 @@ class Vragenlijstv2 extends Component {
                 break
         }
 
-        switch (werkVraag) {
-            case 0:
-                document.querySelector('input[id="extra-question-1-1"]').checked = true
-                break
-            case 1:
-                document.querySelector('input[id="extra-question-1-2"]').checked = true
-                break
-        }
+        document.querySelector('textarea[name=extra-question-1]').value = opmerkingen
 
-        document.querySelector('textarea[name=extra-question-2]').value = opmerkingen
     }
 
     saveQuestions() {
@@ -262,10 +252,9 @@ class Vragenlijstv2 extends Component {
         const QUESTION7 = document.querySelector('input[name=question7]:checked').value
         const QUESTION8 = document.querySelector('input[name=question8]:checked').value
         const QUESTION9 = document.querySelector('input[name=question9]:checked').value
-        const EXTRA_QUESTION1 = document.querySelector('input[name=extra-question-1]:checked').value
-        const EXTRA_QUESTION2 = document.querySelector('textarea[name=extra-question-2]').value
+        const EXTRA_QUESTION1 = document.querySelector('textarea[name=extra-question-1]').value
 
-        fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&werkVraag=${EXTRA_QUESTION1}&opmerkingen=${EXTRA_QUESTION2}`)
+        fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${EXTRA_QUESTION1}`)
             .then(alert('Vragenlijst opgeslagen'))
             .catch(err => console.error(err))
     }
@@ -275,41 +264,29 @@ class Vragenlijstv2 extends Component {
             .then(response => response.json())
             .then(response => this.setState({ vragenlijst: response.data }, () => { this.setVragenlijst() }))
             .catch(err => console.log(err))
+        this.forceUpdate()
     }
 
     render() {
         const { questions } = this.state
-
         return (
             <div className="animated fadeIn">
                 <div className="vragenlijstv2">
                     <Card>
                         <CardHeader>
-                            Vragenlijstv2
+                            Vragenlijst
                         </CardHeader>
                         <CardBody>
                             <Question questions={questions} setVragenlijst={this.setVragenlijst} />
                             <div className="extra-questions">
                                 <div className="extra-question">
-                                    <b>Heeft de deelnemer een baan/opleiding overgehouden na het deelnemen van de drie modules?</b>
-                                    <div className="answer">
-                                        <input type="radio" name="extra-question-1" value="0" id="extra-question-1-1"/> Ja
-                                    </div>
-                                    <div className="answer">
-                                        <input type="radio" name="extra-question-1" value="1" id="extra-question-1-2"/> Nee
-                                    </div>
-                                </div>
-                                <div className="extra-question">
                                     <p><b>Opmerkingen</b></p>
-                                    <Input type="textarea" name="extra-question-2"/>
+                                    <Input type="textarea" name="extra-question-1" />
                                 </div>
-                                
                             </div>
-
                             <div className="save-questions">
                                 <Button onClick={() => { this.saveQuestions() }}>Vragenlijst Opslaan</Button>
                             </div>
-
                         </CardBody>
                     </Card>
                 </div>
