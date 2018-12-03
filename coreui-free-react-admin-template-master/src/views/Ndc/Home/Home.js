@@ -1,27 +1,13 @@
 import React, { Component } from 'react';
 import {
-    Badge,
-    Button,
-    ButtonDropdown,
-    ButtonGroup,
-    ButtonToolbar,
     Card,
     CardBody,
-    CardFooter,
     CardHeader,
-    CardTitle,
     Col,
-    Dropdown,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
-    Progress,
-    Row,
-    Table,
-    CardColumns,
+    Row
 } from 'reactstrap'
 
-import { Bar, Doughnut, Line, Pie, Polar, Radar } from 'react-chartjs-2'
+import { Bar, Pie } from 'react-chartjs-2'
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 
 var Utrecht = 10

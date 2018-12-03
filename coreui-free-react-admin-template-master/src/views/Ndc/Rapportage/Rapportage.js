@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Col, Collapse, Fade, Row } from 'reactstrap'
+import { Button, Card, CardBody, Collapse } from 'reactstrap'
 import ReactTable from 'react-table'
 import toastr from 'toastr'
 
@@ -131,7 +131,7 @@ class Rapportage extends Component {
                                         <Collapse isOpen={this.state.custom[0]} data-parent="#exampleAccordion" id="exampleAccordion1">
                                             <p>
                                                 To do
-                                </p>
+                                            </p>
                                         </Collapse>
                                     </dev>
 
