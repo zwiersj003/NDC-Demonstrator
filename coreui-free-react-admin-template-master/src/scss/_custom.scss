@@ -15,18 +15,47 @@
 }
 
 .vragenlijstv2 {
-    input {
-        margin-right: 10px;
-    }
     h5 {
-        margin-top: 20px;
-        margin-bottom: 0;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     button {
         margin-top: 20px;
     }
+    label {
+        text-align: center;
+        width: 100%;
+        min-height: 30px;
+    }
     .extra-question {
         margin-top: 20px;
+    }
+    .required:after {
+        content: " *";
+        color: red;
+    }
+    .card-body {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .questions {
+        .col-md-1{
+            padding: 0;
+            img {
+                margin-top: 1%;
+            }
+            
+        } 
+        input {
+            margin-bottom: 15px;
+        }
+        .input {
+            margin-bottom: 15px;
+            .block {
+                width: 20%;
+                float: left;
+            }
+        }
     }
 }
 

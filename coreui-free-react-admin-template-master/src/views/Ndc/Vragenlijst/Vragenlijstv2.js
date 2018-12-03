@@ -243,20 +243,24 @@ class Vragenlijstv2 extends Component {
     }
 
     saveQuestions() {
-        const QUESTION1 = document.querySelector('input[name=question1]:checked').value
-        const QUESTION2 = document.querySelector('input[name=question2]:checked').value
-        const QUESTION3 = document.querySelector('input[name=question3]:checked').value
-        const QUESTION4 = document.querySelector('input[name=question4]:checked').value
-        const QUESTION5 = document.querySelector('input[name=question5]:checked').value
-        const QUESTION6 = document.querySelector('input[name=question6]:checked').value
-        const QUESTION7 = document.querySelector('input[name=question7]:checked').value
-        const QUESTION8 = document.querySelector('input[name=question8]:checked').value
-        const QUESTION9 = document.querySelector('input[name=question9]:checked').value
-        const EXTRA_QUESTION1 = document.querySelector('textarea[name=extra-question-1]').value
+        try {
+            const QUESTION1 = document.querySelector('input[name=question1]:checked').value
+            const QUESTION2 = document.querySelector('input[name=question2]:checked').value
+            const QUESTION3 = document.querySelector('input[name=question3]:checked').value
+            const QUESTION4 = document.querySelector('input[name=question4]:checked').value
+            const QUESTION5 = document.querySelector('input[name=question5]:checked').value
+            const QUESTION6 = document.querySelector('input[name=question6]:checked').value
+            const QUESTION7 = document.querySelector('input[name=question7]:checked').value
+            const QUESTION8 = document.querySelector('input[name=question8]:checked').value
+            const QUESTION9 = document.querySelector('input[name=question9]:checked').value
+            const EXTRA_QUESTION1 = document.querySelector('textarea[name=extra-question-1]').value
 
-        fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${EXTRA_QUESTION1}`)
-            .then(alert('Vragenlijst opgeslagen'))
-            .catch(err => console.error(err))
+            fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${EXTRA_QUESTION1}`)
+                    .then(alert('Vragenlijst opgeslagen'))
+                    .catch(err => console.error(err))
+        } catch(err) {
+            alert('Vragenlijst niet opgeslagen\nNiet alle vragen zijn beantwoord')
+        }
     }
 
     getVragenlijst = _ => {
