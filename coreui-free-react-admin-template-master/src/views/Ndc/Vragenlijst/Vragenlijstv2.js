@@ -278,7 +278,7 @@ class Vragenlijstv2 extends Component {
                 <div className="vragenlijstv2">
                     <Card>
                         <CardHeader>
-                            Vragenlijst
+                            <i className="fa fa-question"/>Vragenlijst
                         </CardHeader>
                         <CardBody>
                             <Question questions={questions} setVragenlijst={this.setVragenlijst} />

@@ -108,13 +108,13 @@ class Rapportage extends Component {
             accessor: 'verblijfstatus'
         },
         {
-            Header: 'Thema 1'
+            Header: 'Participatie vooruitgang'
         },
         {
-            Header: 'Thema 2'
+            Header: 'Zelfredzaamheid vooruitgang'
         },
         {
-            Header: 'Thema 3'
+            Header: 'Eigen Regie vooruitgang'
         },]
 
         return (

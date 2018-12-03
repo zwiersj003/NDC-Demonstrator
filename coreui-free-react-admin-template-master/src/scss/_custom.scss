@@ -21,6 +21,9 @@
     }
     button {
         margin-top: 20px;
+        color: white;
+        background-color: #20a8d8;
+        font-weight: bold;
     }
     label {
         text-align: center;
@@ -35,25 +38,27 @@
         color: red;
     }
     .card-body {
-        margin-left: 5%;
+        margin-left: 2%;
         margin-right: 5%;
     }
     .questions {
-        .col-md-1{
+        margin-left: 1%;
+        margin-right: 1%;
+        .col-md-1 {
             padding: 0;
             img {
                 margin-top: 1%;
             }
-            
-        } 
+        }
         input {
             margin-bottom: 15px;
         }
-        .input {
+        .inputs {
             margin-bottom: 15px;
-            .block {
-                width: 20%;
-                float: left;
+            .block,
+            label,
+            input {
+                cursor: pointer;
             }
         }
     }
@@ -76,6 +81,9 @@
         }
         h4 {
             margin-top: 25px;
+        }
+        button {
+            margin: 5px;
         }
     }
 }
