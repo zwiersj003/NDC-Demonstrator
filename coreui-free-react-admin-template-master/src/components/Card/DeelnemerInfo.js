@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
+import React, { Component } from 'react'
+import { Col, Row, Button } from 'reactstrap'
+import { withRouter } from 'react-router-dom'
 
 class DeelnemerInfo extends Component {
 
@@ -25,6 +26,27 @@ class DeelnemerInfo extends Component {
 
     render() {
         let { deelnemersObject } = this.props
+
+        const VragenlijstRouteButton = withRouter(({ history }) => (
+            <div>
+                <div>
+                    <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/0`) }}>
+                        <b>0-Meting</b>
+                    </Button>
+                </div>
+                <div>
+                    <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/1`) }}>
+                        <b>Tussentijdse meting</b>
+                    </Button>
+                </div>
+                <div>
+                    <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/2`) }}>
+                        <b>Eind meting</b>
+                    </Button>
+                </div>
+            </div>
+        ))
+
         return (
             <div className="deelnemer-info">
                 <Row>
@@ -39,9 +61,7 @@ class DeelnemerInfo extends Component {
                     </Col>
                     <Col md="6" lg="4">
                         <h4>Vragenlijsten:</h4>
-                        <p><a href="/modules/deelnemers/vragenlijst">0-Meting</a></p>
-                        <p><a href="/modules/deelnemers/vragenlijst">Tussentijdse Meting</a></p>
-                        <p><a href="/modules/deelnemers/vragenlijst">Eind Meting</a></p>
+                        <p><VragenlijstRouteButton /></p>
                     </Col>
                 </Row>
             </div>
