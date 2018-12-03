@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, CardHeader, CardBody, Button, Input } from 'reactstrap'
+import toastr from 'toastr'
 import Question from './../../../components/Card/Question'
 
 class Vragenlijstv2 extends Component {
@@ -256,10 +257,26 @@ class Vragenlijstv2 extends Component {
             const EXTRA_QUESTION1 = document.querySelector('textarea[name=extra-question-1]').value
 
             fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${EXTRA_QUESTION1}`)
-                    .then(alert('Vragenlijst opgeslagen'))
                     .catch(err => console.error(err))
+
+            this.count = this.count || 1
+            toastr.options = {
+                positionClass: 'toast-top-right',
+                hideDuration: 30,
+                timeOut: 10000
+            }
+            toastr.clear()
+            setTimeout(() => toastr.success(`Vragenlijst succesvol opgeslagen`), 300)
         } catch(err) {
-            alert('Vragenlijst niet opgeslagen\nReden: Niet alle vragen zijn beantwoord')
+            // alert('Vragenlijst niet opgeslagen\nReden: Niet alle vragen zijn beantwoord')
+            this.count = this.count || 1
+            toastr.options = {
+                positionClass: 'toast-top-right',
+                hideDuration: 30,
+                timeOut: 10000
+            }
+            toastr.clear()
+            setTimeout(() => toastr.error(`Vragenlijst niet opgeslagen. Reden: Niet alle vragen zijn beantwoord`), 300)
         }
     }
 
