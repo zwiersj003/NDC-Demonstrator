@@ -25,10 +25,18 @@
         background-color: #20a8d8;
         font-weight: bold;
     }
+    #back-button {
+        color: #00aee8;
+        background-color: white;
+        margin-left: 10px;
+    }
     label {
         text-align: center;
         width: 100%;
         min-height: 30px;
+    }
+    textarea {
+        height: 200px;
     }
     .extra-question {
         margin-top: 20px;

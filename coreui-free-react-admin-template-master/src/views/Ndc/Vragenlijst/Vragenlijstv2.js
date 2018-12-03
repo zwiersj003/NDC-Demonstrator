@@ -238,8 +238,11 @@ class Vragenlijstv2 extends Component {
                 document.querySelector('input[id=question9-5]').checked = true
                 break
         }
-
-        document.querySelector('textarea[name=extra-question-1]').value = opmerkingen
+        if(opmerkingen) {
+            opmerkingen = opmerkingen.replace('<br>', '\n')
+            document.querySelector('textarea[name=extra-question-1]').value = opmerkingen
+        }
+        
 
     }
 
@@ -254,9 +257,10 @@ class Vragenlijstv2 extends Component {
             const QUESTION7 = document.querySelector('input[name=question7]:checked').value
             const QUESTION8 = document.querySelector('input[name=question8]:checked').value
             const QUESTION9 = document.querySelector('input[name=question9]:checked').value
-            const EXTRA_QUESTION1 = document.querySelector('textarea[name=extra-question-1]').value
+            let extraQuestion1 = document.querySelector('textarea[name=extra-question-1]').value
+            extraQuestion1 = extraQuestion1.replace('\n', '<br>')
 
-            fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${EXTRA_QUESTION1}`)
+            fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${extraQuestion1}`)
                     .catch(err => console.error(err))
 
             this.count = this.count || 1
@@ -307,6 +311,7 @@ class Vragenlijstv2 extends Component {
                             </div>
                             <div className="save-questions">
                                 <Button onClick={() => { this.saveQuestions() }}>Vragenlijst Opslaan</Button>
+                                <Button id="back-button" onClick={() => { window.history.back() }}>Terug</Button>
                             </div>
                         </CardBody>
                     </Card>
