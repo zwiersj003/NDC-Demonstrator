@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Badge, Button, Card, CardBody, CardFooter, CardHeader, Col, Collapse, Fade, Row } from 'reactstrap';
 import ReactTable from 'react-table'
-
+import toastr from 'toastr'
 
 class Rapportage extends Component {
     constructor(props) {
@@ -73,6 +73,17 @@ class Rapportage extends Component {
         });
     }
 
+    downloadRapportage() {
+        this.count = this.count || 1
+        toastr.options = {
+            positionClass: 'toast-top-right',
+            hideDuration: 30,
+            timeOut: 10000
+        }
+        toastr.clear()
+        setTimeout(() => toastr.warning(`Rapportage downloaden/printen werkt nog niet`), 300)
+    }
+
     toggleFade() {
         this.setState({ fadeIn: !this.state.fadeIn });
     }
@@ -121,6 +132,11 @@ class Rapportage extends Component {
             <div className="animated fadeIn">
                 <div className="row">
                     <div className="col-3">
+                        <Card>
+                            <CardBody>
+                                <Button id="download-button" onClick={() => { this.downloadRapportage() }}>Download Rapportage</Button>
+                            </CardBody>
+                        </Card>
                         <div className="card card-filters">
                             <div className="card-header">
                                 Filters
