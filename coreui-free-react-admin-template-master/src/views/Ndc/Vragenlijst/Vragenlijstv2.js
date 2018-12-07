@@ -30,7 +30,7 @@ class Vragenlijstv2 extends Component {
             },
             {
                 name: 'question6',
-                question: `6. Ik ben op dit momenbezig met studie, werk of hobby's`
+                question: `6. Ik ben op dit moment bezig met studie, werk of hobby's`
             },
             {
                 name: 'question7',
@@ -260,7 +260,7 @@ class Vragenlijstv2 extends Component {
             let extraQuestion1 = document.querySelector('textarea[name=extra-question-1]').value
             extraQuestion1 = extraQuestion1.replace('\n', '<br>')
 
-            fetch(`http://localhost:4000/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${extraQuestion1}`)
+            fetch(`http://dev.jasperzwiers.eu/vragenlijst/add?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}&vraag1=${QUESTION1}&vraag2=${QUESTION2}&vraag3=${QUESTION3}&vraag4=${QUESTION4}&vraag5=${QUESTION5}&vraag6=${QUESTION6}&vraag7=${QUESTION7}&vraag8=${QUESTION8}&vraag9=${QUESTION9}&opmerkingen=${extraQuestion1}`)
                     .catch(err => console.error(err))
 
             this.count = this.count || 1
@@ -285,7 +285,7 @@ class Vragenlijstv2 extends Component {
     }
 
     getVragenlijst = _ => {
-        fetch(`http://localhost:4000/vragenlijst?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}`)
+        fetch(`http://dev.jasperzwiers.eu/vragenlijst?moduledeelnemerid=${this.props.match.params.id}&vragenlijstmoment=${this.props.match.params.lijst}`)
             .then(response => response.json())
             .then(response => this.setState({ vragenlijst: response.data }, () => { this.setVragenlijst() }))
             .catch(err => console.log(err))

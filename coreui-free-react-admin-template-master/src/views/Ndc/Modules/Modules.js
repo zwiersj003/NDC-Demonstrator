@@ -30,7 +30,7 @@ class Modules extends Component {
   }
 
   getModules = _ => {
-    fetch('http://localhost:4000/modules')
+    fetch('http://dev.jasperzwiers.eu/modules')
       .then(response =>response.json())
       .then(response => this.setState({...this.state, modules: response.data}))
       .catch(err => console.log(err))

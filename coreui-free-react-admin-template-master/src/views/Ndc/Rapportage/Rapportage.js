@@ -69,7 +69,7 @@ class Rapportage extends Component {
     }
 
     getDeelnemers = _ => {
-        fetch(`http://localhost:4000/deelnemers`)
+        fetch(`http://dev.jasperzwiers.eu/deelnemers`)
             .then(response => response.json())
             .then(response => this.setState({ deelnemers: response.data }))
             .catch(err => console.log(err))
@@ -127,13 +127,13 @@ class Rapportage extends Component {
                                     <h2>Filteren op:</h2>
 
                                     <button className="accordion" onClick={() => this.toggleCustom(0)} aria-expanded={this.state.custom[0]} aria-controls="exampleAccordion1">Leeftijd</button>
-                                    <dev class="accordion-content">
+                                    <div class="accordion-content">
                                         <Collapse isOpen={this.state.custom[0]} data-parent="#exampleAccordion" id="exampleAccordion1">
                                             <p>
                                                 To do
                                             </p>
                                         </Collapse>
-                                    </dev>
+                                    </div>
 
                                     <button className="accordion" onClick={() => this.toggleCustom(1)} aria-expanded={this.state.custom[1]} aria-controls="exampleAccordion2">Module</button>
                                     <dev class="accordion-content">

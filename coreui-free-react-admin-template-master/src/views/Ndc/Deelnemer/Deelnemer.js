@@ -29,7 +29,7 @@ class Deelnemer extends Component {
     }
 
     getDeelnemers = _ => {
-        fetch(`http://localhost:4000/moduledeelnemers?modules=${this.props.match.params.id}`)
+        fetch(`http://dev.jasperzwiers.eu/moduledeelnemers?modules=${this.props.match.params.id}`)
             .then(response => response.json())
             .then(response => this.setState({ deelnemers: response.data }))
             .catch(err => console.log(err))
