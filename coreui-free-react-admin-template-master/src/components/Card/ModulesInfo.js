@@ -3,11 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { Col, Row, Button } from 'reactstrap'
 
 class ModulesInfo extends Component {
-
-    constructor(props) {
-        super(props)
-    }
-
+    
     render() {
         let { modulesObject } = this.props
 

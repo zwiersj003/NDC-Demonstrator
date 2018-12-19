@@ -93,6 +93,8 @@ class Vragenlijstv2 extends Component {
             case 5:
                 document.querySelector('input[id=question1-5]').checked = true
                 break
+            default:
+                break
         }
 
         switch (vraag2) {
@@ -110,6 +112,8 @@ class Vragenlijstv2 extends Component {
                 break
             case 5:
                 document.querySelector('input[id=question2-5]').checked = true
+                break
+            default:
                 break
         }
 
@@ -129,6 +133,8 @@ class Vragenlijstv2 extends Component {
             case 5:
                 document.querySelector('input[id=question3-5]').checked = true
                 break
+            default:
+                break
         }
 
         switch (vraag4) {
@@ -146,6 +152,8 @@ class Vragenlijstv2 extends Component {
                 break
             case 5:
                 document.querySelector('input[id=question4-5]').checked = true
+                break
+            default:
                 break
         }
 
@@ -165,6 +173,8 @@ class Vragenlijstv2 extends Component {
             case 5:
                 document.querySelector('input[id=question5-5]').checked = true
                 break
+            default:
+                break
         }
 
         switch (vraag6) {
@@ -182,6 +192,8 @@ class Vragenlijstv2 extends Component {
                 break
             case 5:
                 document.querySelector('input[id=question6-5]').checked = true
+                break
+            default:
                 break
         }
 
@@ -201,6 +213,8 @@ class Vragenlijstv2 extends Component {
             case 5:
                 document.querySelector('input[id=question7-5]').checked = true
                 break
+            default:
+                break
         }
 
         switch (vraag8) {
@@ -219,6 +233,8 @@ class Vragenlijstv2 extends Component {
             case 5:
                 document.querySelector('input[id=question8-5]').checked = true
                 break
+            default:
+                break
         }
 
         switch (vraag9) {
@@ -236,6 +252,8 @@ class Vragenlijstv2 extends Component {
                 break
             case 5:
                 document.querySelector('input[id=question9-5]').checked = true
+                break
+            default:
                 break
         }
         if(opmerkingen) {

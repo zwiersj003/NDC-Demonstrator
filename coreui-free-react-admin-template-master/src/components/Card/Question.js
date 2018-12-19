@@ -3,20 +3,16 @@ import { Row, Col } from 'reactstrap'
 
 class Question extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     setInputChecked(input) {
         document.querySelector(`input[id=${input}]`).checked = true
     }
 
     renderQuestion = ({ name, question }) => (
-        <div className={"inputs " + name}>
+        <div key={"inputs " + name}>
             <h5 className="required">{question}</h5>
             <Row>
                 <Col className="border" md="1">
-                    <center><img src="../../../../assets/img/Smileyrood.png" height="40px" width="45px" position="text-center" /></center>
+                    <center><img src="../../../../assets/img/Smileyrood.png" alt="Rode smiley" height="40px" width="45px" position="text-center" /></center>
                 </Col>
                 <Col className="block border" md="2" onClick={() => { this.setInputChecked(name + '-1') }}>
                     <label>Helemaal mee oneens</label>
@@ -39,7 +35,7 @@ class Question extends Component {
                     <center><input type="radio" name={name} value="5" id={name + '-5'} /></center>
                 </Col>
                 <Col className="border" md="1">
-                    <center><img src="../../../../assets/img/Smileygroen.png" height="40px" width="45px" position="text-center" /></center>
+                    <center><img src="../../../../assets/img/Smileygroen.png" alt="Groene smiley" height="40px" width="45px" position="text-center" /></center>
                 </Col>
             </Row>
         </div>)

@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.scss'
 import 'react-table/react-table.css'
 import 'toastr/build/toastr.min.css'
+import 'react-accessible-accordion/dist/fancy-example.css'
+import 'rc-slider/assets/index.css'
 
 // Containers
 import { DefaultLayout } from './containers';

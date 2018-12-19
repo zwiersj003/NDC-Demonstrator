@@ -126,8 +126,68 @@
     }
 }
 
-.filter {
-    font-weight: bold;
+.rapportage {
+    .filter {
+        button {
+            background-color: transparent;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            padding: 10px 0;
+            width: 100%;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        button:after {
+            content: "\F107";
+            font-family: fontawesome;
+            font-size: 14px;
+            float: right;
+            margin-right: 10px;
+        }
+        label {
+            font-weight: 500;
+            line-height: 2px;
+            cursor: pointer;
+        }
+        input {
+            margin-right: 5px;
+        }
+        .filter-options {
+            margin: 5px;
+        }
+    }
+}
+
+.rapportagev2 {
+    label {
+        font-weight: bold;
+    }
+    .filter-multi-select {
+        margin: 10px;
+    }
+    button,
+    button:hover {
+        width: 100%;
+        background-color: #00aee8;
+        color: white;
+        font-weight: bold;
+    }
+    .age-slider {
+        padding-right: 20px;
+        padding-left: 20px;
+        .row {
+            margin-bottom: 10px;
+            .slider-max {
+                input,
+                label {
+                    float: right;
+                }
+            }
+        }
+    }
 }
 
 .margin {
@@ -200,4 +260,14 @@ button.accordion:hover {
     background-color: #00aee8;
     color: white;
     font-weight: bold;
+}
+
+.report-pdf {
+    iframe {
+        width: 100%;
+    }
+
+    #page {
+        display: none;
+    }
 }

@@ -76,15 +76,15 @@ class Filters extends Component {
                                 <div id="checkboxes" class="margin">
                                     <div>
                                         <label for="one">
-                                        <input type="checkbox" id="one" />Module X</label>
+                                            <input type="checkbox" id="one" />Module X</label>
                                     </div>
                                     <div>
                                         <label for="two">
-                                        <input type="checkbox" id="two" />Module Y</label>
+                                            <input type="checkbox" id="two" />Module Y</label>
                                     </div>
                                     <div>
                                         <label for="three">
-                                        <input type="checkbox" id="three" />Module Z</label>
+                                            <input type="checkbox" id="three" />Module Z</label>
                                     </div>
                                 </div>
                             </div>
@@ -101,15 +101,15 @@ class Filters extends Component {
                                 <div id="checkboxes" class="margin">
                                     <div>
                                         <label for="one">
-                                        <input type="checkbox" id="one" />Status X</label>
+                                            <input type="checkbox" id="one" />Status X</label>
                                     </div>
                                     <div>
                                         <label for="two">
-                                        <input type="checkbox" id="two" />Status Y</label>
+                                            <input type="checkbox" id="two" />Status Y</label>
                                     </div>
                                     <div>
                                         <label for="three">
-                                        <input type="checkbox" id="three" />Status Z</label>
+                                            <input type="checkbox" id="three" />Status Z</label>
                                     </div>
                                 </div>
                             </div>
@@ -126,15 +126,15 @@ class Filters extends Component {
                                 <div id="checkboxes" class="margin">
                                     <div>
                                         <label for="one">
-                                        <input type="checkbox" id="one" />Module X</label>
+                                            <input type="checkbox" id="one" />Module X</label>
                                     </div>
                                     <div>
                                         <label for="two">
-                                        <input type="checkbox" id="two" />Module Y</label>
+                                            <input type="checkbox" id="two" />Module Y</label>
                                     </div>
                                     <div>
                                         <label for="three">
-                                        <input type="checkbox" id="three" />Module Z</label>
+                                            <input type="checkbox" id="three" />Module Z</label>
                                     </div>
 
                                 </div>

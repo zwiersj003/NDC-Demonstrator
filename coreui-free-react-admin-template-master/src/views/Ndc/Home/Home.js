@@ -17,8 +17,6 @@ var Burgum = 60
 var Arnhem = 80
 var Tilburg = 108
 
-var colors = ["", "", ""]
-
 // TODO: create array with different colors, so you can loop trough based on amount of locations
 
 const pie = {

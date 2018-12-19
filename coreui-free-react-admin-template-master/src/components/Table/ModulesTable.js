@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from 'react-table'
 
 class ModulesTable extends Component {
-
-    constructor(props) {
-        super(props)
-    }
-
+    
     renderModule = ({ moduleID, naam, locatie }) => <tr onClick={() => this.props.getCurrentlySelected(moduleID)}><td>{moduleID}</td><td>{naam}</td><td>{locatie}</td></tr>
 
     render() {

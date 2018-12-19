@@ -4,16 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 class DeelnemerInfo extends Component {
 
-    constructor(props) {
-        super(props)
-    }
-
-    calculateAge(geboortedatum) { // birthday is a date
-        // console.log(geboortedatum)
-        // var ageDifMs = Date.now() - geboortedatum.getTime();
-        // var ageDate = new Date(ageDifMs); // miliseconds from epoch
-        // return Math.abs(ageDate.getUTCFullYear() - 1970);
-        var geboortedatum = geboortedatum
+    calculateAge(geboortedatum) {
         var today = new Date();
         var birthDate = new Date(geboortedatum);
         var age = today.getFullYear() - birthDate.getFullYear();
@@ -28,18 +19,18 @@ class DeelnemerInfo extends Component {
         let { deelnemersObject } = this.props
 
         const VragenlijstRouteButton = withRouter(({ history }) => (
-            <div>
-                <div>
+            <div className="questionlist-button-group">
+                <div className="questionlist-button">
                     <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/0`) }}>
                         <b>0-Meting</b>
                     </Button>
                 </div>
-                <div>
+                <div className="questionlist-button">
                     <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/1`) }}>
                         <b>Tussentijdse meting</b>
                     </Button>
                 </div>
-                <div>
+                <div className="questionlist-button">
                     <Button onClick={() => { history.push(`/modules/deelnemers/${deelnemersObject.Module_has_DeelnemerID}/vragenlijst/2`) }}>
                         <b>Eind meting</b>
                     </Button>
@@ -51,7 +42,7 @@ class DeelnemerInfo extends Component {
             <div className="deelnemer-info">
                 <Row>
                     <Col lg="3">
-                        <img src="../../../../assets/img/placeholder_avatar.jpg" />
+                        <img src="../../../../assets/img/placeholder_avatar.jpg" alt="Profile placeholder"/>
                     </Col>
                     <Col md="6" lg="4">
                         <h4>Persoonlijke Informatie:</h4>
@@ -61,7 +52,7 @@ class DeelnemerInfo extends Component {
                     </Col>
                     <Col md="6" lg="4">
                         <h4>Vragenlijsten:</h4>
-                        <p><VragenlijstRouteButton /></p>
+                        <VragenlijstRouteButton />
                     </Col>
                 </Row>
             </div>
