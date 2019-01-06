@@ -30,8 +30,8 @@ const Rapportage = Loadable({
   loading: Loading,
 });
 
-const Demo = Loadable({
-  loader: () => import('./components/Report/Demo'),
+const Result = Loadable({
+  loader: () => import('./views/Ndc/Rapportage/Results'),
   loading: Loading,
 });
 
@@ -42,7 +42,7 @@ const routes = [
   { path: '/home', exact: true,  name: 'Home', component: Home },
   { path: '/modules/:id/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
   { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
-  { path: '/rapportage/pdf', exact: true, name: 'PDF', component: Demo },
+  { path: '/rapportage/resultaat', exact: true, name: 'Resultaat', component: Result },
 ];
 
 export default routes;

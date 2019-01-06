@@ -13,9 +13,9 @@ class RapportageV2 extends Component {
         this.state = {
             everything: [],
             modules: [],
-            selectedModules: null,
-            selectedLocations: null,
-            selectedStatuses: null,
+            selectedModules: [],
+            selectedLocations: [],
+            selectedStatuses: [],
             allModuleNames: [],
             locations: [],
             statuses: []
@@ -71,11 +71,12 @@ class RapportageV2 extends Component {
     }
 
     getAllLocations() {
-        var locations = _.chain(this.state.modules).countBy('locatie').map((count, locatie) => ({ locatie })).value()
+        var locations = _.chain(this.state.modules).countBy('locatie').map((count, locatie) => ({ locatie, count })).value()
         var locationsWithValue = []
         for (let index = 0; index < locations.length; index++) {
-            locationsWithValue.push({ label: locations[index].locatie, value: locations[index].locatie })
+            locationsWithValue.push({ label: locations[index].locatie, value: locations[index].locatie, count: locations[index].count})
         }
+        console.log(locationsWithValue)
         this.setState({ locations: locationsWithValue });
     }
 
@@ -90,10 +91,10 @@ class RapportageV2 extends Component {
 
     render() {
         //<Range min={1} max={100}allowCross={false} defaultValue={[1, 100]} onChange={this.log}/>
-        const ReportRouteButton = withRouter(({ history }) => (
+        const ResultRouteButton = withRouter(({ history }) => (
             <Button onClick={() => {
                 history.push({
-                    pathname: `/rapportage/pdf`,
+                    pathname: `/rapportage/resultaat`,
                     state: {
                         selectedModules: this.state.selectedModules,
                         selectedLocations: this.state.selectedLocations,
@@ -153,7 +154,7 @@ class RapportageV2 extends Component {
                                     <Row>
                                         <Col xl="3"></Col>
                                         <Col xl="6">
-                                            <Button>Download me</Button>
+                                            <ResultRouteButton>Download me</ResultRouteButton>
                                         </Col>
                                         <Col xl="3"></Col>
                                     </Row>
