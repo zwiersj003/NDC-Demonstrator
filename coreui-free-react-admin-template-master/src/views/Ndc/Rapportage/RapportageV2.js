@@ -18,19 +18,13 @@ class RapportageV2 extends Component {
             selectedStatuses: null,
             allModuleNames: [],
             locations: [],
-            statuses: [],
-            renderDocument: false,
-            reportData: []
+            statuses: []
         }
     }
 
     componentDidMount() {
         this.getAll()
         this.getModules()
-    }
-
-    log(value) {
-        console.log(value); //eslint-disable-line
     }
 
     handleChangeModules = (selectedOption) => {
@@ -94,104 +88,17 @@ class RapportageV2 extends Component {
         this.setState({ statuses: statusesWithValue });
     }
 
-    moduleFilter() {
-        const MODULES = this.state.selectedModules
-        let moduleFilter
-
-        if (MODULES != null && MODULES.length > 0) {
-            for (let i = 0; i < MODULES.length; i++) {
-                if (!moduleFilter) {
-                    moduleFilter = `(naam='${MODULES[i].value}'`
-                } else {
-                    moduleFilter = moduleFilter + ` OR naam='${MODULES[i].value}'`
-                }
-            }
-            moduleFilter = moduleFilter + ')'
-        }
-
-        return moduleFilter
-    }
-
-    locationFilter() {
-        const LOCATIONS = this.state.selectedLocations
-        let locationFilter
-
-        if (LOCATIONS != null && LOCATIONS.length > 0) {
-            for (let i = 0; i < LOCATIONS.length; i++) {
-                if (!locationFilter) {
-                    locationFilter = `(locatie='${LOCATIONS[i].value}'`
-                } else {
-                    locationFilter = locationFilter + ` OR locatie='${LOCATIONS[i].value}'`
-                }
-            }
-            locationFilter = locationFilter + ')'
-        }
-
-        return locationFilter
-    }
-
-    statusFilter() {
-        const STATUSES = this.state.selectedStatuses
-        let statusFilter
-
-        if (STATUSES != null && STATUSES.length > 0) {
-            for (let i = 0; i < STATUSES.length; i++) {
-                if (!statusFilter) {
-                    statusFilter = `(verblijfstatus='${STATUSES[i].value}'`
-                } else {
-                    statusFilter = statusFilter + ` OR verblijfstatus='${STATUSES[i].value}'`
-                }
-            }
-            statusFilter = statusFilter + ')'
-        }
-
-        return statusFilter
-    }
-
-    createReport() {
-        let moduleFilter, locationFilter, statusFilter, allFilters
-
-        moduleFilter = this.moduleFilter()
-        locationFilter = this.locationFilter()
-        statusFilter = this.statusFilter()
-
-        if (moduleFilter != null && locationFilter != null && statusFilter != null) {
-            allFilters = moduleFilter + ' AND ' + locationFilter + ' AND ' + statusFilter
-        } else if (moduleFilter != null && locationFilter != null) {
-            allFilters = moduleFilter + ' AND ' + locationFilter
-        } else if (moduleFilter != null && statusFilter != null) {
-            allFilters = moduleFilter + ' AND ' + statusFilter
-        } else if (statusFilter != null && locationFilter != null) {
-            allFilters = statusFilter + ' AND ' + locationFilter
-        } else if (moduleFilter != null) {
-            allFilters = moduleFilter
-        } else if (locationFilter != null) {
-            allFilters = locationFilter
-        } else if (statusFilter != null) {
-            allFilters = statusFilter
-        }
-        console.log('All Filters: ' + allFilters)
-
-        if (allFilters != null) {
-            fetch(`http://localhost:4000/report?filters=${allFilters}`)
-                .then(response => response.json())
-                .then(response => this.setState({ ...this.state, reportData: response.data }, () => console.log(this.state.reportData)))
-                .catch(err => console.log(err))
-        } else {
-            fetch(`http://localhost:4000/report/all`)
-                .then(response => response.json())
-                .then(response => this.setState({ ...this.state, reportData: response.data }, () => console.log(this.state.reportData)))
-                .catch(err => console.log(err))
-        }
-
-    }
-
     render() {
         //<Range min={1} max={100}allowCross={false} defaultValue={[1, 100]} onChange={this.log}/>
         const ReportRouteButton = withRouter(({ history }) => (
             <Button onClick={() => {
                 history.push({
-                    pathname: `/rapportage/pdf`
+                    pathname: `/rapportage/pdf`,
+                    state: {
+                        selectedModules: this.state.selectedModules,
+                        selectedLocations: this.state.selectedLocations,
+                        selectedStatuses: this.state.selectedStatuses
+                    }
                 })
             }}>
                 <b>Bekijk Rapportage</b>
@@ -246,7 +153,7 @@ class RapportageV2 extends Component {
                                     <Row>
                                         <Col xl="3"></Col>
                                         <Col xl="6">
-                                            <ReportRouteButton />
+                                            <Button>Download me</Button>
                                         </Col>
                                         <Col xl="3"></Col>
                                     </Row>

@@ -42,7 +42,7 @@ const routes = [
   { path: '/home', exact: true,  name: 'Home', component: Home },
   { path: '/modules/:id/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
   { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
-  { path: '/rapportage/pdf', exact: true,  name: 'PDF', component: Demo, state: {reportData: 'kvaaa'} },
+  { path: '/rapportage/pdf', exact: true, name: 'PDF', component: Demo },
 ];
 
 export default routes;
