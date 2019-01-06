@@ -19,7 +19,8 @@
         margin-top: 5px;
         margin-bottom: 5px;
     }
-    button {
+    button,
+    button:hover {
         margin-top: 20px;
         color: white;
         background-color: #20a8d8;
@@ -120,44 +121,11 @@
         overflow: scroll;
         max-height: 450px;
     }
-    button {
+    button,
+    button:hover {
         background-color: #00aee8;
         color: white;
-    }
-}
-
-.rapportage {
-    .filter {
-        button {
-            background-color: transparent;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-radius: 0;
-            padding: 10px 0;
-            width: 100%;
-            text-align: left;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-        button:after {
-            content: "\F107";
-            font-family: fontawesome;
-            font-size: 14px;
-            float: right;
-            margin-right: 10px;
-        }
-        label {
-            font-weight: 500;
-            line-height: 2px;
-            cursor: pointer;
-        }
-        input {
-            margin-right: 5px;
-        }
-        .filter-options {
-            margin: 5px;
-        }
+        font-weight: bold;
     }
 }
 
@@ -217,35 +185,6 @@
     }
 }
 
-button.accordion {
-    width: 100%;
-    background-color: white;
-    border: none;
-    outline: none;
-    text-align: left;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0, 2s linear;
-}
-
-button.accordion:after {
-    content: "\f107";
-    font-family: "fontawesome";
-    font-size: 14px;
-    float: right;
-}
-
-button.accordion:hover {
-    background-color: #ddd;
-}
-
-.accordion-content {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;
-}
-
 .navbar-brand-minimized {
     margin-left: 100px;
 }
@@ -262,12 +201,20 @@ button.accordion:hover {
     font-weight: bold;
 }
 
-.report-pdf {
-    iframe {
-        width: 100%;
+.report-result {
+    .progression-chart {
+        height: 200px;
     }
-
-    #page {
-        display: none;
+    h5 {
+        margin: 20px 0 0 20px;
+        text-decoration: underline;
+    }
+    button,
+    button:hover {
+        width: 100%;
+        background-color: #00aee8;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 5px;
     }
 }

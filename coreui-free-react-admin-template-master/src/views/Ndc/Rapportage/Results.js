@@ -30,6 +30,7 @@ class Results extends Component {
         return (
             <div className="animated fadeIn">
                 <div className="report-result">
+                    <Button id="back-button" onClick={() => { window.history.back() }}>Terug</Button>
                     <SelectedFilters selectedLocations={selectedLocations} selectedModules={selectedModules} selectedStatuses={selectedStatuses}/>
                     <GroupStatistics results={results} selectedLocations={selectedLocations}/>
                     <Row>
