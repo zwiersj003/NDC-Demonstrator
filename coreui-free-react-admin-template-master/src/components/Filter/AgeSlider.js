@@ -7,26 +7,30 @@ class AgeSlider extends Component {
         super(props)
         this.state = {
             min: 0,
-            max: 100
+            max: 100,
+            value: [0, 100]
         }
     }
 
     onSliderChange = (value) => {
+        console.log('jasper')
         console.log(value)
-        console.log()
+        console.log('jasper')
+        this.setState({
+            min: value[0],
+            max: value[1]
+        })
     }
 
     onMinChange = (e) => {
-        console.log(e.target.value + ' - Value')
         this.setState({
-            min: e.target.value,
+            min: parseInt(e.target.value) || 0
         })
     }
 
     onMaxChange = (e) => {
-        console.log(e.target.value + ' - Value')
         this.setState({
-            max: e.target.value,
+            max: parseInt(e.target.value) || 100
         })
     }
 
@@ -44,8 +48,8 @@ class AgeSlider extends Component {
                         <input type="text" value={this.state.max} onChange={this.onMaxChange} />
                     </Col>
                 </Row>
-                <Range min={0} max={100}
-                    onChange={this.onSliderChange}
+                <Range min={0} max={100} value={[this.state.min, this.state.max]}
+                onChange={this.onSliderChange}
                 />
             </div>
         )

@@ -44,6 +44,14 @@ function LocationsChart(props) {
 function getPercentage(first, second) {
     const difference = second - first
     switch (difference) {
+        case -4:
+            return 0
+        case -3:
+            return 1
+        case -2:
+            return 2
+        case -1:
+            return 3
         case 0:
             return 4
         case 1:
@@ -95,39 +103,39 @@ function Progression(props) {
             </CardHeader>
             <CardBody>
                 <div className="progressionbar">
-                    <h5>Vraag 1</h5>
+                    <h5>Vraag 1: Ik weet waar ik goed in ben namelijk</h5>
                     <ProgressionBar progression={averageProgression1} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 2</h5>
+                    <h5>Vraag 2: Waar ik goed in ben kan ik gebruiken voor mijn studie of mijn werk</h5>
                     <ProgressionBar progression={averageProgression2} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 3</h5>
+                    <h5>Vraag 3: Ik weet wat voor studie of werk ik wil doen</h5>
                     <ProgressionBar progression={averageProgression3} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 4</h5>
+                    <h5>Vraag 4: Ik kan hulp vragen bij het vinden van een studie of werk</h5>
                     <ProgressionBar progression={averageProgression4} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 5</h5>
+                    <h5>Vraag 5: Ik kan zelfstandig taken voor studie, werk en hobby's doen</h5>
                     <ProgressionBar progression={averageProgression5} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 6</h5>
+                    <h5>Vraag 6: Ik ben op dit moment bezig met studie, werk of hobby's</h5>
                     <ProgressionBar progression={averageProgression6} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 7</h5>
+                    <h5>Vraag 7: Ik heb contact met Nederlanders</h5>
                     <ProgressionBar progression={averageProgression7} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 8</h5>
+                    <h5>Vraag 8: Ik ken scholen of bedrijven in mijn omgeving die mij informatie of hulp kunnen bieden</h5>
                     <ProgressionBar progression={averageProgression8} />
                 </div>
                 <div className="progressionbar">
-                    <h5>Vraag 9</h5>
+                    <h5>Vraag 9: Ik ben trots op wat ik in Nederland heb bereikt</h5>
                     <ProgressionBar progression={averageProgression9} />
                 </div>
             </CardBody>
@@ -143,6 +151,13 @@ function ProgressionBar(props) {
         tooltips: {
             enabled: false,
             custom: CustomTooltips
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
         }
     }
 
@@ -195,6 +210,7 @@ class GroupStatistics extends Component {
                     </Col>
                 </Row>
                 <Progression results={results} />
+
             </div>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Card, CardHeader, CardBody, Label, Row, Col } from 'reactstrap'
 import SelectedFilters from '../../../components/Report/SelectedFilters'
 import GroupStatistics from '../../../components/Report/GroupStatistics'
+import IndividualStatistics from '../../../components/Report/IndividualStatistics'
 
 class Results extends Component {
 
@@ -33,26 +34,7 @@ class Results extends Component {
                     <Button id="back-button" onClick={() => { window.history.back() }}>Terug</Button>
                     <SelectedFilters selectedLocations={selectedLocations} selectedModules={selectedModules} selectedStatuses={selectedStatuses}/>
                     <GroupStatistics results={results} selectedLocations={selectedLocations}/>
-                    <Row>
-                        <Col sm="6">
-                            <Card>
-                                <CardHeader>
-                                    Rapportage Resultaat
-                                </CardHeader>
-                                <CardBody>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col sm="6">
-                            <Card>
-                                <CardHeader>
-                                    Rapportage Resultaat
-                                </CardHeader>
-                                <CardBody>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
+                    <IndividualStatistics results={results}/>
                 </div>
             </div>
         )

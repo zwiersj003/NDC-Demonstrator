@@ -93,14 +93,26 @@ class RapportageV2 extends Component {
         //<Range min={1} max={100}allowCross={false} defaultValue={[1, 100]} onChange={this.log}/>
         const ResultRouteButton = withRouter(({ history }) => (
             <Button onClick={() => {
-                history.push({
-                    pathname: `/rapportage/resultaat`,
-                    state: {
-                        selectedModules: this.state.selectedModules,
-                        selectedLocations: this.state.selectedLocations,
-                        selectedStatuses: this.state.selectedStatuses
-                    }
-                })
+                if(!this.state.selectedLocations.length == 0) {
+                    history.push({
+                        pathname: `/rapportage/resultaat`,
+                        state: {
+                            selectedModules: this.state.selectedModules,
+                            selectedLocations: this.state.selectedLocations,
+                            selectedStatuses: this.state.selectedStatuses
+                        }
+                    })
+                } else {
+                    history.push({
+                        pathname: `/rapportage/resultaat`,
+                        state: {
+                            selectedModules: this.state.selectedModules,
+                            selectedLocations: this.state.locations,
+                            selectedStatuses: this.state.selectedStatuses
+                        }
+                    })
+                }
+                
             }}>
                 <b>Bekijk Rapportage</b>
             </Button>
