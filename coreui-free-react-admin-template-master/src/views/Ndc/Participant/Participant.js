@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import DeelnemerInfo from '../../../components/Card/DeelnemerInfo'
-import DeelnemerTable from '../../../components/Table/DeelnemerTable'
+import DeelnemerInfo from '../../../components/Card/ParticipantInfo'
+import DeelnemerTable from '../../../components/Table/ParticipantTable'
 
-class Deelnemer extends Component {
+class Participant extends Component {
 
     constructor(props) {
         super(props)
@@ -56,4 +56,4 @@ class Deelnemer extends Component {
     }
 }
 
-export default Deelnemer
+export default Participant

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Col, Row, Button } from 'reactstrap'
 import { withRouter } from 'react-router-dom'
 
-class DeelnemerInfo extends Component {
+class ParticipantInfo extends Component {
 
     calculateAge(geboortedatum) {
         var today = new Date();
@@ -60,4 +60,4 @@ class DeelnemerInfo extends Component {
     }
 }
 
-export default DeelnemerInfo
+export default ParticipantInfo

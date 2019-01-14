@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactTable from 'react-table'
 
-class DeelnemerTable extends Component {
+class ParticipantTable extends Component {
 
     render() {
         let { deelnemers } = this.props
@@ -35,4 +35,4 @@ class DeelnemerTable extends Component {
     }
 }
 
-export default DeelnemerTable
+export default ParticipantTable

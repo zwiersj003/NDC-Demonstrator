@@ -10,13 +10,13 @@ const Modules = Loadable({
   loading: Loading,
 });
 
-const Vragenlijst = Loadable({
-  loader: () => import('./views/Ndc/Vragenlijst/Vragenlijstv2'),
+const Questionlist = Loadable({
+  loader: () => import('./views/Ndc/Questionlist/Questionlist'),
   loading: Loading,
 });
 
-const Deelnemer = Loadable({
-  loader: () => import('./views/Ndc/Deelnemer/Deelnemer'),
+const Participant = Loadable({
+  loader: () => import('./views/Ndc/Participant/Participant'),
   loading: Loading,
 });
 
@@ -25,23 +25,23 @@ const Home = Loadable({
   loading: Loading,
 });
 
-const Rapportage = Loadable({
-  loader: () => import('./views/Ndc/Rapportage/RapportageV2'),
+const Report = Loadable({
+  loader: () => import('./views/Ndc/Report/Report'),
   loading: Loading,
 });
 
 const Result = Loadable({
-  loader: () => import('./views/Ndc/Rapportage/Results'),
+  loader: () => import('./views/Ndc/Report/Results'),
   loading: Loading,
 });
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/modules', exact: true,  name: 'Modules', component: Modules },
-  { path: '/modules/deelnemers/:id/vragenlijst/:lijst', exact: true,  name: 'Vragenlijst', component: Vragenlijst },
+  { path: '/modules/deelnemers/:id/vragenlijst/:lijst', exact: true,  name: 'Vragenlijst', component: Questionlist },
   { path: '/home', exact: true,  name: 'Home', component: Home },
-  { path: '/modules/:id/deelnemers', exact: true,  name: 'Deelnemers', component: Deelnemer },
-  { path: '/rapportage', exact: true,  name: 'Rapportage', component: Rapportage },
+  { path: '/modules/:id/deelnemers', exact: true, name: 'Deelnemers', component: Participant },
+  { path: '/rapportage', exact: true,  name: 'Rapportage', component: Report },
   { path: '/rapportage/resultaat', exact: true, name: 'Resultaat', component: Result },
 ];
 

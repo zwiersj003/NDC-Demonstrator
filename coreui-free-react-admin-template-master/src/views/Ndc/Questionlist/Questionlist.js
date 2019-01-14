@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Card, CardHeader, CardBody, Button, Input } from 'reactstrap'
 import toastr from 'toastr'
-import Question from './../../../components/Card/Question'
+import Question from '../../../components/Card/Question'
 
-class Vragenlijstv2 extends Component {
+class Questionlist extends Component {
 
     constructor(props) {
         super(props)
@@ -339,4 +339,4 @@ class Vragenlijstv2 extends Component {
     }
 }
 
-export default Vragenlijstv2
+export default Questionlist

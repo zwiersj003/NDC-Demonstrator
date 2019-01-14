@@ -6,7 +6,7 @@ import _ from 'lodash'
 import AgeSlider from '../../../components/Filter/AgeSlider'
 import { withRouter } from 'react-router-dom'
 
-class RapportageV2 extends Component {
+class Report extends Component {
 
     constructor(props) {
         super(props)
@@ -181,4 +181,4 @@ class RapportageV2 extends Component {
     }
 }
 
-export default RapportageV2
+export default Report
